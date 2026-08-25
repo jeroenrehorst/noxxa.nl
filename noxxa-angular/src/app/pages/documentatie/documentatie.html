@@ -1,0 +1,49 @@
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Documentatie</p>
+    <h1>Documentatie</h1>
+    <p class="page-sub">
+      Alle documentatie op één plek: brochures, montagehandleidingen, lijntekeningen en
+      productbladen. Zo vindt u snel de juiste informatie voor advies, montage en onderhoud.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="doc-grid">
+      @for (d of docTypes; track d.title) {
+        <article class="doc-card">
+          <div class="doc-icon">{{ d.icon }}</div>
+          <h2>{{ d.title }}</h2>
+          <p>{{ d.text }}</p>
+        </article>
+      }
+    </div>
+
+    <div class="downloads">
+      <h2>Montagehandleidingen</h2>
+      <div class="download-grid">
+        @for (d of downloads; track d.file) {
+          <a class="download-card" [href]="d.file" target="_blank" rel="noopener">
+            <span class="download-icon">📄</span>
+            <span class="download-body">
+              <strong>{{ d.title }}</strong>
+              <small>{{ d.description }}</small>
+            </span>
+            <span class="download-cta">PDF ↓</span>
+          </a>
+        }
+      </div>
+    </div>
+
+    <div class="doc-note">
+      <h3>Documentatie nodig voor een specifiek product?</h3>
+      <p>
+        Bekijk het assortiment en neem contact op met een van onze verkooppunten voor de bijbehorende
+        montagehandleidingen, lijntekeningen en productbladen.
+      </p>
+      <a routerLink="/verkooppunten" class="btn">Naar verkooppunten</a>
+    </div>
+  </div>
+</section>

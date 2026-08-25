@@ -1,0 +1,27 @@
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Verkooppunten</p>
+    <h1>Waar te koop</h1>
+    <p class="page-sub">
+      Noxxa hang- en sluitwerk is verkrijgbaar bij onderstaande verkooppunten. Gebruik hun
+      store-finder om de dichtstbijzijnde vestiging bij u in de buurt te vinden.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container point-grid">
+    @for (p of points; track p.name) {
+      <article class="point-card">
+        <div class="point-logo">
+          <img [src]="p.logo" [alt]="p.name" />
+        </div>
+        <h2>{{ p.name }}</h2>
+        <p>{{ p.description }}</p>
+        <a [href]="p.url" target="_blank" rel="noopener noreferrer" class="btn"
+          >Bekijk verkooppunten</a
+        >
+      </article>
+    }
+  </div>
+</section>

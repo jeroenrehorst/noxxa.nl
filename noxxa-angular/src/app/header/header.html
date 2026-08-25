@@ -1,0 +1,48 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a routerLink="/" class="logo" (click)="closeMenu()">
+      <img src="assets/noxxa-logo-white.png" alt="Noxxa" />
+    </a>
+
+    <button
+      class="hamburger"
+      type="button"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Menu"
+    >
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" [class.open]="menuOpen()">
+      <ul class="nav-list">
+        <li class="has-dropdown" [class.open]="categoriesOpen()">
+          <button type="button" class="nav-link dropdown-toggle" (click)="toggleCategories()">
+            Assortiment
+            <span class="caret">▾</span>
+          </button>
+          <ul class="dropdown">
+            @for (cat of categories; track cat.slug) {
+              <li>
+                <a
+                  [routerLink]="['/assortiment', cat.slug]"
+                  routerLinkActive="active"
+                  (click)="closeMenu()"
+                  >{{ cat.name }}</a
+                >
+              </li>
+            }
+          </ul>
+        </li>
+        <li>
+          <a routerLink="/verkooppunten" routerLinkActive="active" class="nav-link" (click)="closeMenu()"
+            >Verkooppunten</a>
+        </li>
+        <li>
+          <a routerLink="/documentatie" routerLinkActive="active" class="nav-link" (click)="closeMenu()"
+            >Documentatie</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

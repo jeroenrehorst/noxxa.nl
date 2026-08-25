@@ -1,0 +1,109 @@
+/* Noxxa brand theme */
+:root {
+  --nx-green: #00b388;
+  --nx-green-dark: #00926f;
+  --nx-dark: #1b1b1b;
+  --nx-dark-2: #262626;
+  --nx-gray: #6b7280;
+  --nx-light: #f5f6f7;
+  --nx-border: #e5e7eb;
+  --nx-max: 1180px;
+  --nx-radius: 10px;
+  --nx-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', 'Segoe UI', Arial, sans-serif;
+  color: #2b2b2b;
+  font-size: 16px;
+  line-height: 1.65;
+  background: #fff;
+}
+
+h1, h2, h3, h4, h5, p, ul , ol, li {
+  hyphens: auto;
+  margin-bottom: 10px;
+}
+
+
+h1,
+h2,
+h3 {
+  color: var(--nx-dark);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+a {
+  color: var(--nx-green);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--nx-green-dark);
+}
+hr {
+  padding: 15px 0 20px;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: var(--nx-max);
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--nx-green);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: var(--nx-radius);
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--nx-green-dark);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn--ghost {
+  background: transparent;
+  border: 2px solid var(--nx-green);
+  color: var(--nx-green);
+}
+
+.btn--ghost:hover {
+  background: var(--nx-green);
+  color: #fff;
+}
+
+.section {
+    padding: 30px 0;
+}
+
+.eyebrow {
+  color: var(--nx-green);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.8rem;
+}
