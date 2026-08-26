@@ -648,7 +648,7 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
   },
   "sluitlijsten": {
     "slug": "sluitlijsten",
-    "heroImage": "assets/products/image-sluitlijstenv3.svg",
+    "heroImage": "assets/products/noxxa-sluitlijsten.png",
     "blocks": [
       {
         "heading": "Noxxa Sluitlijsten voor Dubbele Deuren - Maximale Veiligheid met Stijl",

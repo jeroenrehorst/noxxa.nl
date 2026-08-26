@@ -1,7 +1,7 @@
 <section class="hero">
   <div class="container hero-inner">
     <div class="hero-image">
-<img src="assets/Campagnebeeld_mobile.webp" alt="Noxxa hang- en sluitwerk met een xx-factor!" />
+      <img src="assets/Campagnebeeld_mobile.webp" alt="Noxxa hang- en sluitwerk met een xx-factor!" />
     </div>
   </div>
 </section>
@@ -25,18 +25,18 @@
 
     <div class="cat-grid">
       @for (cat of categories; track cat.slug) {
-        <a class="cat-card" [routerLink]="['/assortiment', cat.slug]">
-          <div class="cat-thumb">
-            @if (cat.image) {
-              <img [src]="cat.image" [alt]="cat.name" loading="lazy" />
-            } @else {
-              <span class="cat-thumb-fallback">{{ cat.name.charAt(0) }}</span>
-            }
-          </div>
-          <h3>{{ cat.name }}</h3>
-          <p>{{ cat.tagline }}</p>
-          <!-- <span class="cat-link">Bekijk categorie →</span> -->
-        </a>
+      <a class="cat-card" [routerLink]="['/assortiment', cat.slug]">
+        <div class="cat-thumb">
+          @if (cat.image) {
+          <img [src]="cat.image" [alt]="cat.name" loading="lazy" />
+          } @else {
+          <span class="cat-thumb-fallback">{{ cat.name.charAt(0) }}</span>
+          }
+        </div>
+        <h3>{{ cat.name }}</h3>
+        <p>{{ cat.tagline }}</p>
+        <!-- <span class="cat-link">Bekijk categorie →</span> -->
+      </a>
       }
     </div>
   </div>
@@ -49,12 +49,12 @@
     </div>
     <div class="line-grid">
       @for (line of productLines; track line.name) {
-        <article class="line-card">
-          <div class="line-label">
-            <img [src]="line.image" [alt]="'Noxxa ' + line.name" loading="lazy" />
-          </div>
-          <p>{{ line.text }}</p>
-        </article>
+      <article class="line-card">
+        <div class="line-label">
+          <img [src]="line.image" [alt]="'Noxxa ' + line.name" loading="lazy" />
+        </div>
+        <p>{{ line.text }}</p>
+      </article>
       }
     </div>
   </div>
@@ -65,10 +65,27 @@
     <div class="about-text">
       <h2>Op zoek naar hang- en sluitwerk van hoogwaardige kwaliteit?</h2>
       @for (p of about; track $index) {
-        <p>{{ p }}</p>
+      <p>{{ p }}</p>
       }
-      <a routerLink="/verkooppunten" class="btn">Waar te koop</a>
     </div>
   </div>
 </section>
 
+<section class="outside-section">
+<h2 class="section-head-stores">Verkooppunten</h2>
+
+<section class="section" id="section-stores">
+  <div class="container point-grid">
+    @for (p of points; track p.name) {
+    <article class="point-card">
+      <div class="point-logo">
+        <img [src]="p.logo" [alt]="p.name" />
+      </div>
+      <h2>{{ p.name }}</h2>
+      <p>{{ p.description }}</p>
+      <a [href]="p.url" target="_blank" rel="noopener noreferrer" class="btn">Bekijk verkooppunten</a>
+    </article>
+    }
+  </div>
+</section>
+</section>

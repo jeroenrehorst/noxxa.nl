@@ -113,6 +113,8 @@
   border-radius: 2px;
 }
 
+
+
 @media (max-width: 991px) {
   .hamburger {
     display: flex;
@@ -175,4 +177,11 @@
     margin: 10px 0 0;
     text-align: center;
   }
+}
+
+
+@media (min-width: 1200px) {
+.header-inner[_ngcontent-ng-c4162488638] {
+    padding: 0;
+}
 }
