@@ -1,17 +1,17 @@
 .page-hero {
-  background: linear-gradient(135deg, #1b1b1b 0%, #0e2c25 100%);
+  background: #fff;
   color: #fff;
-  padding: 56px 0;
+  padding: 40px 0;
 }
 
 .page-hero h1 {
-  color: #fff;
+  color: #002855;
   font-size: clamp(1.8rem, 4vw, 2.8rem);
   margin: 8px 0 12px;
 }
 
 .page-sub {
-  color: #d6dad8;
+  color: #000000;
   max-width: 640px;
   margin: 0;
 }
@@ -65,8 +65,36 @@
   align-self: center;
 }
 
+.section {
+    padding: 40px 0;
+    background: #919d9d;
+}
+article.point-card {
+    background: #fff;
+    padding: 20px;
+}
+.point-card .btn {
+    align-self: center;
+    width: 100%;
+    background: #002855;
+}
+
+
 @media (max-width: 860px) {
   .point-grid {
     grid-template-columns: 1fr;
   }
+}
+
+@media (min-width: 768px) {
+  .point-grid{
+    grid-template-columns: 1fr 1fr 1fr;
+}
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+    padding: 0;
+}
 }

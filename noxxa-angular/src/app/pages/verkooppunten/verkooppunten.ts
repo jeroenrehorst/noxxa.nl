@@ -19,19 +19,19 @@ export class Verkooppunten {
       name: 'Isero',
       logo: 'assets/isero-logo.svg',
       description: 'Landelijke ijzerwaren- en gereedschapsspecialist met vestigingen door heel Nederland.',
-      url: 'https://www.isero.nl',
+      url: 'https://www.isero.nl/nl-nl/store-finder',
     },
     {
       name: 'Polvo',
       logo: 'assets/polvo-logo.svg',
       description: 'Groothandel in bevestigings-, hang- en sluitwerk voor de professional.',
-      url: 'https://www.polvobv.nl',
+      url: 'https://polvobv.nl/nl-nl/storelocator',
     },
     {
       name: 'Weijntjes',
       logo: 'assets/weijntjes-logo.svg',
       description: 'Specialist in gereedschappen, bevestiging en hang- en sluitwerk.',
-      url: 'https://www.weijntjes.nl',
+      url: 'https://www.weijntjes.nl/onze-winkels',
     },
   ];
 }
