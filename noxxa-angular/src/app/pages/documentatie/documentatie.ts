@@ -17,7 +17,7 @@ export class Documentatie {
     },
     {
       title: '4000 serie veiligheidsslot / sluitkom',
-      file: 'assets/documentatie-content/montagehandleidingen/Noxxa-montagehandleiding-4000-serie_Veiligheidsdeurslot-NX105149-NX105150-NX105151-NX105152-NX105153-NX105154-NX105155-NX105156_Sluitkom-NX105605.pdf',
+      file: 'assets/documentatie-content/montagehandleidingen/Montagehandleiding-4000-serie_deurslot-NX105149-NX105150-NX105151-NX105152-NX105153-NX105154-NX105155-NX105156_Sluitkom-NX105605.pdf',
     },
     {
       title: 'Veiligheidssluitkommen',
