@@ -24,13 +24,13 @@ export class Verkooppunten {
     {
       name: 'Polvo',
       logo: 'assets/polvo-logo.svg',
-      description: 'Groothandel in bevestigings-, hang- en sluitwerk voor de professional.',
+      description: 'Groothandel in gereedschappen, bevestigingsmiddelen, hang- en sluitwerk voor de professional.',
       url: 'https://polvobv.nl/nl-nl/storelocator',
     },
     {
       name: 'Weijntjes',
       logo: 'assets/weijntjes-logo.svg',
-      description: 'Specialist in gereedschappen, bevestiging en hang- en sluitwerk.',
+      description: 'Sinds 1884, de speciaalzaak voor uniek hang- en sluitwerk',
       url: 'https://www.weijntjes.nl/onze-winkels',
     },
   ];

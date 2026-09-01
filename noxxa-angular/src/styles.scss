@@ -30,6 +30,10 @@ body {
   background: #fff;
 }
 
+h1 {font-size: 37px; color: #002855;}
+h2 {font-size: 30px; color: #002855;}
+h3  {font-size: 24px; color: #002855;} 
+
 h1, h2, h3, h4, h5, p, ul , ol, li {
   hyphens: auto;
   margin-bottom: 10px;
@@ -39,7 +43,6 @@ h1, h2, h3, h4, h5, p, ul , ol, li {
 h1,
 h2,
 h3 {
-  color: var(--nx-dark);
   line-height: 1.2;
   font-weight: 700;
 }
@@ -61,7 +64,7 @@ img {
 }
 
 .container {
-  max-width: var(--nx-max);
+  max-width: 1170px;
   margin: 0 auto;
   padding: 0 15px;
   width: 100%;

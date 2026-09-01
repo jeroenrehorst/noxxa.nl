@@ -26,6 +26,10 @@ export class Header {
   }
 
   toggleCategories(): void {
+    if (!window.matchMedia('(max-width: 991px)').matches) {
+      return;
+    }
+
     this.categoriesOpen.update((v) => !v);
   }
 }

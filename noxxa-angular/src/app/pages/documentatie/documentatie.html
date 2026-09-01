@@ -1,49 +1,58 @@
 <section class="page-hero">
   <div class="container">
-    <p class="eyebrow">Documentatie</p>
     <h1>Documentatie</h1>
     <p class="page-sub">
       Alle documentatie op één plek: brochures, montagehandleidingen, lijntekeningen en
-      productbladen. Zo vindt u snel de juiste informatie voor advies, montage en onderhoud.
+      productbladen. Zo vind je snel de juiste informatie voor advies, montage en onderhoud.
     </p>
   </div>
 </section>
 
-<section class="section">
+<section class="section-brochures">
+
   <div class="container">
+    <h2>Brochures</h2>
     <div class="doc-grid">
       @for (d of docTypes; track d.title) {
-        <article class="doc-card">
-          <div class="doc-icon">{{ d.icon }}</div>
-          <h2>{{ d.title }}</h2>
-          <p>{{ d.text }}</p>
-        </article>
+      <a class="doc-card" [href]="d.file" target="_blank" rel="noopener">
+        <div class="doc-image"><img [src]="d.image" alt="{{ d.title }}" /></div>
+        <h3>{{ d.title }}</h3>
+      </a>
       }
     </div>
+  </div>
+</section>
 
-    <div class="downloads">
-      <h2>Montagehandleidingen</h2>
-      <div class="download-grid">
-        @for (d of downloads; track d.file) {
-          <a class="download-card" [href]="d.file" target="_blank" rel="noopener">
-            <span class="download-icon">📄</span>
-            <span class="download-body">
-              <strong>{{ d.title }}</strong>
-              <small>{{ d.description }}</small>
-            </span>
-            <span class="download-cta">PDF ↓</span>
-          </a>
-        }
-      </div>
+<section class="section-montagehandleidingen">
+  <div class="container">
+    <h2>Montagehandleidingen</h2>
+    <label class="doc-search">
+      <!-- <span>Zoeken</span> -->
+      <input
+        type="search"
+        placeholder="Zoek montagehandleiding"
+        [value]="documentSearch()"
+        (input)="updateDocumentSearch($event)"
+      />
+    </label>
+    
+    <div class="container container-ongecategoriseerd" [class.open]="uncategorizedExpanded()">
+    <button
+      type="button"
+      class="accordion-toggle"
+      (click)="toggleUncategorized()"
+      [attr.aria-expanded]="uncategorizedExpanded()"
+    >
+      <span>Ongecategoriseerd</span>
+      <span class="accordion-caret">▾</span>
+    </button>
+    <div class="doc-grid" id="ongecategoriseerd-docs">
+      @for (d of filteredDownloads(); track d.file) {
+      <a class="doc-card" [href]="d.file" target="_blank" rel="noopener">
+        <h4>{{ d.title }}</h4>
+      </a>
+      }
     </div>
-
-    <div class="doc-note">
-      <h3>Documentatie nodig voor een specifiek product?</h3>
-      <p>
-        Bekijk het assortiment en neem contact op met een van onze verkooppunten voor de bijbehorende
-        montagehandleidingen, lijntekeningen en productbladen.
-      </p>
-      <a routerLink="/verkooppunten" class="btn">Naar verkooppunten</a>
-    </div>
+  </div>
   </div>
 </section>
