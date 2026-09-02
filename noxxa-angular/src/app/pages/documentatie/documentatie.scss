@@ -178,6 +178,7 @@ section.section-brochures .container {
   margin-bottom: 0;
   text-align: center;
 }
+
 .doc-card h4 {
   font-size: 13.5px;
   background: #002855;
@@ -187,39 +188,58 @@ section.section-brochures .container {
   margin-bottom: 0;
   text-align: center;
 }
+
 .doc-card .doc-image {
   background: #e2e6eb;
   padding: 15px;
   transition: background 0.7s ease;
   border-radius: 8px;
 }
+
 section.section-brochures h2 {
-    margin-top: 0;
+  margin-top: 0;
 }
+
 section.section-montagehandleidingen h4 {
-    margin-top: 0;
+  margin-top: 0;
 }
+
 section.section-montagehandleidingen .doc-card {
-    padding: 0;
+  padding: 0;
 }
-section.section-montagehandleidingen .doc-card h4{
-    padding: 7.5px;
-    background: #e2e6eb;
-    color: #002855;
+
+section.section-montagehandleidingen .doc-card h4 {
+  padding: 7.5px;
+  background: #e2e6eb;
+  color: #002855;
 }
+
 .container.container-ongecategoriseerd .doc-grid {
   display: none;
   padding: 0 0 20px;
 }
+
 .container.container-ongecategoriseerd.open .doc-grid {
   display: grid;
 }
+
 .container.container-ongecategoriseerd {
-    padding: 0 0 40px;
+  padding: 0 0 40px;
 }
+
 .container.container-ongecategoriseerd h4 {
-    height: 60px
+  height: 60px
 }
+
+section.section-montagehandleidingen {
+  background: #e2e6eb;
+}
+
+section.section-montagehandleidingen h2 {
+  margin-top: 0;
+  padding-top: 20px;
+}
+
 
 .accordion-toggle {
   align-items: center;
@@ -246,15 +266,20 @@ section.section-montagehandleidingen .doc-card h4{
 .container.container-ongecategoriseerd.open .accordion-caret {
   transform: rotate(0deg);
 }
-
-
-
-
-@media (max-width: 860px) {
-  .download-grid {
-    grid-template-columns: 1fr;
-  }
+section.section-montagehandleidingen {
+    background: #f5f6f7;
 }
+
+
+
+
+
+@media (max-width: 767px) {
+.container.container-ongecategoriseerd h4 {
+    height: -webkit-fill-available;
+}
+}
+
 
 
 
@@ -262,15 +287,18 @@ section.section-montagehandleidingen .doc-card h4{
   .doc-grid {
     grid-template-columns: repeat(5, 1fr);
   }
+
   .doc-search {
     max-width: 961px;
-}
-section.section-montagehandleidingen .doc-grid {
+  }
+
+  section.section-montagehandleidingen .doc-grid {
     grid-template-columns: repeat(3, 1fr);
-}
-.section-brochures .doc-card h3{
+  }
+
+  .section-brochures .doc-card h3 {
     height: 47.38px;
-}
+  }
 }
 
 
@@ -292,16 +320,24 @@ section.section-montagehandleidingen .doc-grid {
   .doc-card:hover .doc-image {
     background: #002855;
   }
-    .doc-search {
+
+  .doc-search {
     max-width: 962px;
-}
-.section-brochures .doc-card h3{
+  }
+
+  .section-brochures .doc-card h3 {
     height: auto;
-}
-section.section-montagehandleidingen .doc-grid {
+  }
+
+  section.section-montagehandleidingen .doc-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  section.section-montagehandleidingen .container {
+    max-width: 992px;
+  }
 }
-}
+
 
 @media (min-width: 1200px) {
   section.page-hero .container {
@@ -318,13 +354,19 @@ section.section-montagehandleidingen .doc-grid {
   .doc-card {
     padding: 15px;
   }
-    .doc-search  {
+
+  .doc-search {
     max-width: 1200px;
-}
-section.section-montagehandleidingen > div {
+  }
+
+  section.section-montagehandleidingen>div {
     padding: 0 !important;
-}
-section.section-montagehandleidingen .doc-grid {
+  }
+
+  section.section-montagehandleidingen .doc-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+  section.section-montagehandleidingen .container {
+  max-width: 1170px;
 }
 }

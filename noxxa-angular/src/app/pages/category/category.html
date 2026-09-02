@@ -1,96 +1,106 @@
 @if (category(); as cat) {
-  <section class="cat-hero" [class.has-image]="content()?.heroImage">
-    <div class="container cat-hero-inner">
-      <div class="cat-hero-text">
-        <nav class="breadcrumb">
-          <a routerLink="/">Home</a>
-          <span>/</span>
-          <span>Assortiment</span>
-          <span>/</span>
-          <strong>{{ cat.name }}</strong>
-        </nav>
-        <h1>{{ cat.name }}</h1>
-        <p class="tagline">{{ cat.tagline }}</p>
-        <div class="hero-actions">
+<section class="cat-hero" [class.has-image]="content()?.heroImage">
+  <div class="container cat-hero-inner">
+    <div class="cat-hero-text">
+      <nav class="breadcrumb">
+        <a routerLink="/">Home</a>
+        <span>/</span>
+        <span>Assortiment</span>
+        <span>/</span>
+        <strong>{{ cat.name }}</strong>
+      </nav>
+      <h1>{{ cat.name }}</h1>
+      <p class="tagline">{{ cat.tagline }}</p>
+      <!-- <div class="hero-actions">
           <a routerLink="/verkooppunten" class="btn">Waar te koop</a>
           <a routerLink="/documentatie" class="btn btn--ghost btn--light">Documentatie</a>
-        </div>
-      </div>
-      @if (content()?.heroImage; as hero) {
+        </div> -->
+    </div>
+    <!-- @if (content()?.heroImage; as hero) {
         <div class="cat-hero-media">
           <img [src]="hero" [alt]="cat.name" />
         </div>
-      }
-    </div>
-  </section>
+      } -->
+  </div>
+</section>
 
-  <section class="section cat-content">
-    <div class="container">
-      @for (block of content()?.blocks ?? []; track $index) {
-        <article class="block" [class.reverse]="$index % 2 === 1" [class.no-image]="!block.image">
-          <div class="block-text">
-            @if (block.heading) {
-              <h2>{{ block.heading }}</h2>
-            }
-            @for (p of block.paragraphs; track $index) {
-              <p>{{ p }}</p>
-            }
-            @if (block.bullets.length) {
-              <ul class="block-bullets">
-                @for (b of block.bullets; track $index) {
-                  <li>{{ b }}</li>
-                }
-              </ul>
-            }
-          </div>
-          @if (block.image; as img) {
-            <div class="block-media">
-              <img [src]="img" [alt]="block.heading || cat.name" loading="lazy" />
-            </div>
-          }
-        </article>
-      }
-
-      @if (!(content()?.blocks?.length)) {
-        <p class="intro">{{ cat.intro }}</p>
-        <ul class="section-list">
-          @for (s of cat.sections; track s) {
-            <li>{{ s }}</li>
+@for (block of content()?.blocks ?? []; track $index) {
+<section class="section cat-content">
+  <div class="container">
+    <article class="block" [class.reverse]="$index % 2 === 1" [class.no-image]="!block.image">
+      <div class="block-text">
+        @if (block.heading) {
+        <h2>{{ block.heading }}</h2>
+        }
+        @for (p of block.paragraphs; track $index) {
+        <p>{{ p }}</p>
+        }
+        @if (block.bullets.length) {
+        <ul class="block-bullets">
+          @for (b of block.bullets; track $index) {
+          <li>{{ b }}</li>
           }
         </ul>
-      }
-    </div>
-  </section>
-
-  <section class="related">
-    <div class="container">
-      <h2>Andere categorieën</h2>
-      <div class="related-grid">
-        @for (r of related(); track r.slug) {
-          <a class="related-card" [routerLink]="['/assortiment', r.slug]">
-            <span>{{ r.name }}</span>
-            <em>→</em>
-          </a>
         }
       </div>
-    </div>
-  </section>
-
-  <section class="cta">
-    <div class="container cta-inner">
-      <div>
-        <h2>Interesse in {{ cat.name }}?</h2>
-        <p>Vind uw dichtstbijzijnde verkooppunt en vraag naar het Noxxa assortiment.</p>
+      @if (block.image; as img) {
+      <div class="block-media">
+        <img [src]="img" [alt]="block.heading || cat.name" loading="lazy" />
       </div>
-      <a routerLink="/verkooppunten" class="btn">Naar verkooppunten</a>
+      }
+    </article>
+  </div>
+</section>
+}
+
+@if (!(content()?.blocks?.length)) {
+<section class="section cat-content">
+  <div class="container">
+    <p class="intro">{{ cat.intro }}</p>
+    <ul class="section-list">
+      @for (s of cat.sections; track s) {
+      <li>{{ s }}</li>
+      }
+    </ul>
+  </div>
+</section>
+}
+
+
+
+
+
+
+
+<section class="related">
+  <div class="container">
+    <h2>Andere categorieën</h2>
+    <div class="related-grid">
+      @for (r of related(); track r.slug) {
+      <a class="related-card" [routerLink]="['/assortiment', r.slug]">
+        <span>{{ r.name }}</span>
+        <em>→</em>
+      </a>
+      }
     </div>
-  </section>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container cta-inner">
+    <div>
+      <h2>Interesse in {{ cat.name }}?</h2>
+      <p>Vind uw dichtstbijzijnde verkooppunt en vraag naar het Noxxa assortiment.</p>
+    </div>
+    <a routerLink="/verkooppunten" class="btn">Naar verkooppunten</a>
+  </div>
+</section>
 } @else {
-  <section class="section">
-    <div class="container not-found">
-      <h1>Categorie niet gevonden</h1>
-      <p>De opgevraagde categorie bestaat niet.</p>
-      <a routerLink="/" class="btn">Terug naar home</a>
-    </div>
-  </section>
+<section class="section">
+  <div class="container not-found">
+    <h1>Categorie niet gevonden</h1>
+    <p>De opgevraagde categorie bestaat niet.</p>
+    <a routerLink="/" class="btn">Terug naar home</a>
+  </div>
+</section>
 }

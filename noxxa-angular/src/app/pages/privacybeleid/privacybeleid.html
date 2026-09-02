@@ -1,36 +1,461 @@
 <section class="page-hero">
   <div class="container">
-    <p class="eyebrow">Privacy</p>
     <h1>Privacybeleid</h1>
-    <p class="page-sub">
-      De privacyverklaring van Isero B.V. legt uit hoe wij omgaan met uw persoonlijke gegevens en
-      welke rechten u heeft.
-    </p>
+    <p class="page-sub">Isero B.V. respecteert je privacy en doet er alles aan om je persoonlijke gegevens te
+      beschermen. In deze privacyverklaring lees je hoe wij omgaan met je gegevens en wat je rechten zijn.</p>
+    <p class="page-sub">We kunnen op verschillende momenten persoonlijke gegevens van je ontvangen. Bijvoorbeeld wanneer
+      jij of je bedrijf contact met ons opneemt (of wij contact met jou), een aanvraag indient voor het aanmaken van een
+      account, goederen of diensten bij ons koopt, onze website(s) of apps gebruikt, verbinding maakt via sociale media
+      of gebruikmaakt van een link naar of van onze website(s)/apps.</p>
+    <p class="page-sub">Deze verklaring moet worden gelezen in samenhang met onze toepasselijke voorwaarden voor
+      websitegebruik en ons cookiebeleid.</p>
   </div>
 </section>
 
-<section class="section">
+<section class="section-privacy-body">
   <div class="container privacy-body">
-    <p class="intro">
-      Deze privacyverklaring beschrijft wanneer en hoe wij gegevens verzamelen — bijvoorbeeld bij
-      contact, accountaanvragen, aankopen of gebruik van de website — en verwijst naar de
-      gebruiksvoorwaarden en het cookiebeleid. Hieronder vindt u de onderwerpen die in het volledige
-      privacybeleid worden behandeld.
-    </p>
+    <p class="intro">Deze privacyverklaring bevat links zodat je kunt doorklikken naar de verschillende onderwerpen.</p>
 
-    <ol class="privacy-list">
-      @for (s of sections; track s) {
-        <li>{{ s }}</li>
+    <ol class="privacy-list" id="top">
+      @for (s of sections; track s.anchor) {
+      <li><a href="#{{ s.anchor }}" (click)="scrollToAnchor($event, s.anchor)">{{ s.label }}</a></li>
       }
     </ol>
-
-    <div class="privacy-contact">
-      <h3>Vragen over uw gegevens?</h3>
-      <p>
-        Neem contact met ons op via
-        <a href="mailto:info@noxxa.nl">info&#64;noxxa.nl</a> voor vragen over dit privacybeleid of
-        uw persoonlijke gegevens.
-      </p>
-    </div>
   </div>
+  <section class="section-privacy-tekst">
+    <div class="privacy-tekst" (click)="handlePrivacyTextClick($event)">
+      <h2 id="anchor1">1. Belangrijke informatie en wie wij zijn</h2>
+      <div>
+        <hr>
+      </div>
+      <h3>Doel van deze privacyverklaring</h3>
+      <P>Deze privacyverklaring is bedoeld om je informatie te geven over hoe Isero B.V. jouw persoonlijke gegevens
+        verzamelt en verwerkt.</P>
+
+
+      <h3>Wie zijn wij?</h3>
+      <p>Isero B.V. maakt deel uit van de Grafton Group (<a href="http://www.graftonplc.com" target="_blank"
+          data-mce-href="http://www.graftonplc.com">www.graftonplc.com</a>).<br>Voor vragen over deze privacyverklaring
+        of wanneer je een verzoek wilt indienen om wettelijke rechten uit te oefenen kun je contact opnemen met:</p>
+      <p>Isero B.V.<br>T.a.v. functionaris voor gegevensbescherming<br>E-mailadres: AVG@isero.nl</p>
+      <p>Postadres: Dirk Verheulweg 3 2742 JR Waddinxveen</p>
+      <p>We stellen het op prijs als we de kans krijgen om eventuele zorgen over de verwerking van je persoonlijke
+        gegevens weg te nemen. Laat het ons dus vooral direct weten. Heb je klachten over de manier waarop wij je
+        gegevens verwerken? Dan kun je altijd een klacht indienen bij de <a
+          href="https://autoriteitpersoonsgegevens.nl/" target="_blank">Nederlandse Autoriteit Persoonsgegevens
+          (AP)</a>.</p>
+      <h3>Doorgeven wijzigingen</h3>
+      <p>Deze privacyverklaring is voor het laatst bijgewerkt op 23 augustus 2021.Het is belangrijk dat de persoonlijke
+        gegevens die wij bewaren juist en actueel zijn. Houd ons op de hoogte als er persoonlijke gegevens veranderen
+        tijdens je relatie met ons.</p>
+      <h3>Links met derden</h3>
+      <p>Onze website kan links bevatten naar websites van derden, plug-ins en applicaties. Als je op die links klikt of
+        die verbindingen inschakelt, kunnen derden mogelijk gegevens verzamelen of delen. Wij hebben geen controle over
+        deze websites van derden en zijn niet verantwoordelijk voor hun privacyverklaringen. Wanneer je onze website
+        verlaat, raden wij aan de privacyverklaring te lezen van elke website die je bezoekt.<br><br> <a href="#top"
+          data-mce-href="#top">Terug naar boven</a></p>
+      <h2 id="anchor2">2. DE GEGEVENS DIE WIJ OVER JOU VERZAMELEN</h2>
+      <hr>
+      <p>Persoonlijke gegevens, of persoonlijke informatie, is alle informatie over een persoon waardoor die persoon kan
+        worden geïdentificeerd. Wij kunnen verschillende soorten persoonlijke gegevens verzamelen, gebruiken, opslaan en
+        overdragen. Deze hebben wij als volgt gegroepeerd:</p>
+      <ul>
+        <li><strong>Identiteitsgegevens</strong>: zoals voornaam, achternaam en gebruikersnaam.</li>
+        <li><strong>Contactgegevens</strong>: zoals factuuradres, afleveradres, e-mailadres en telefoonnummers.</li>
+        <li><strong>Financiële gegevens</strong>: zoals betaalkaartgegevens en, wanneer jij of jouw bedrijf op rekening
+          bestelt, bankrekeninggegevens en informatie die wordt bewaard door kredietinformatie- en
+          fraudepreventiebureaus.</li>
+        <li><strong>Transactiegegevens</strong>: zoals details over de handelsgeschiedenis van jou en van jouuw bedrijf,
+          inclusief betalingen.</li>
+        <li><strong>Technische gegevens</strong>: zoals internetprotocol (IP)-adres, inloggegevens, browsertype en
+          -versie, browserplug-intypes en -versies, besturingssysteem en platform en andere technologie op de apparaten
+          die je gebruikt om toegang te krijgen tot onze website(s)/of apps.</li>
+        <li><strong>Profielgegevens</strong>: zoals gebruikersnaam en wachtwoord, producten/diensten die aan jou/jouw
+          bedrijf worden geleverd, feedback en antwoorden op enquêtes.</li>
+        <li><strong>Gebruiksgegevens</strong>: zoals informatie over hoe je onze website gebruikt.</li>
+        <li><strong>Marketing- en communicatiegegevens</strong>: zoals omvatten jouw voorkeuren over het al dan niet
+          ontvangen van marketing van ons en, zo ja, je communicatievoorkeuren.We verzamelen, gebruiken en delen ook
+          geaggregeerde gegevens, zoals statistische of demografische gegevens. Geaggregeerde gegevens kunnen worden
+          afgeleid van persoonlijke gegevens, maar worden wettelijk niet als persoonlijke gegevens beschouwd, aangezien
+          deze gegevens jouw identiteit niet direct of indirect onthullen. We kunnen bijvoorbeeld je gebruiksgegevens
+          samenvoegen om het percentage gebruikers te berekenen dat toegang heeft tot een specifieke websitefunctie. Als
+          we geaggregeerde gegevens combineren of verbinden met je persoonlijke gegevens zodat deze jou direct of
+          indirect kunnen identificeren, behandelen we de gecombineerde gegevens als persoonlijke gegevens die zullen
+          worden gebruikt in overeenstemming met deze privacyverklaring.</li>
+      </ul><br>Wij streven ernaar geen speciale categorieën persoonlijke gegevens over jou te verzamelen. Strafbare
+      feiten kunnen echter voorkomen op kredietreferenties of fraudebestrijdingscontroles die we uitvoeren.
+      <h3>Als je geen persoonlijke gegevens vestrekt</h3>
+      Wanneer we persoonlijke gegevens moeten verzamelen op grond van de wet of volgens de voorwaarden van een contract
+      dat we met je hebben gesloten en je deze gegevens niet verstrekt wanneer daarom wordt gevraagd, kunnen we het
+      contract dat we hebben of proberen aan te gaan mogelijk niet uitvoeren (bijvoorbeeld om goederen of diensten te
+      leveren). In dit geval is het mogelijk dat we een contract dat je met ons hebt moeten annuleren. We zullen je
+      ervan op de hoogte stellen als dit het geval is.<br><br> <a href="#top" data-mce-href="#top">Terug naar boven</a>
+      <h2 id="anchor3">3. HOE WORDEN JOUW PERSOONLIJKE GEGEVENS VERZAMELD?</h2>
+      <hr>
+      <p>We gebruiken verschillende methoden om (persoonlijke) gegevens te verzamelen, onder meer via:</p>
+      <ul>
+        <li><strong>Directe interacties</strong>. Je kunt ons je identiteits-, contact- en financiële gegevens
+          verstrekken door formulieren in te vullen of door met ons te corresponderen per post, telefoon, e-mail, via
+          deze website, apps, op sociale media of anderszins. Denk bijvoorbeeld aan de volgende situaties:</li>
+        <ul>
+          <li>Inschrijving op onze nieuwsbrief en/of andere publicaties;</li>
+          <li>Aanvraag van brochure of ander promotie- of marketingmateriaal aan;</li>
+          <li>Bestellen op rekening;</li>
+          <li>Het kopen van goederen en/of diensten in een van onze vestigingen of via onze website;</li>
+          <li>Je doet mee aan een wedstrijd, of reageert op een actie of enquête;</li>
+          <li>Het geven van feedback aan ons</li>
+        </ul>
+        <li><strong>Geautomatiseerde technologieën of interacties</strong>.<br>Terwijl je onze website gebruikt, kunnen
+          we automatisch technische gegevens verzamelen over jouw apparatuur, browse-acties en patronen. We verzamelen
+          deze persoonlijke gegevens door gebruik te maken van cookies, serverlogs en andere gelijkwaardige
+          technologieën. In ons cookiebeleid lees je hier meer informatie over en de mogelijkheden om dit gebruik te
+          beperken.</li>
+        <li><strong>Derden en openbaar beschikbare bronnen</strong>.<br>We kunnen persoonlijke gegevens over jou
+          ontvangen van verschillende derde partijen en openbare bronnen. Dit zijn:</li>
+        <ul>
+          <li>Kredietinformatiebureaus, kredietverzekeraar en fraudepreventieorganisaties. Wanneer u of een bedrijf
+            waarin u een partner of bestuurder bent, een aanvraag om op rekening te bestellen indient, kunnen wij
+            informatie over u vragen bij kredietinformatiebureaus en fraudepreventieorganisaties. Er wordt dan onderzoek
+            gedaan op verstrekte adressen. Dit kan ook informatie opleveren over andere leden van uw huishouden. De
+            relevante bureaus/organisaties houden die zoekopdracht bij en delen informatie uit hun administratie met ons
+            en met andere bedrijven die kredietaanvragen beoordelen. Het doel hiervan is fraude te voorkomen. Ook
+            registreren wij informatie over de handelsgeschiedenis van u/uw bedrijf bij ons en wij delen deze informatie
+            met kredietinformatiebureaus en fraudepreventieorganisaties. Mocht het nodig zijn om uw faciliteit op
+            rekening te herzien, dan kan een verdere controle bij kredietinformatiebureaus worden uitgevoerd en kan door
+            hen een aantekening van de zoekopdracht worden bijgehouden.</li>
+          <li>Incasso- en debiteurenbeheersorganisaties. Als de schulden van u/uw bedrijf niet zijn betaald, kunnen we
+            uw persoonlijke gegevens delen met relevante incasso- en/of debiteurenbeheersbureaus.</li>
+          <li>Andere bedrijven in dezelfde of verwante sectoren. Als onderdeel van onze procedures voor
+            kredietreferentie kunnen we bij andere bedrijven in dezelfde of gerelateerde sectoren inlichtingen inwinnen
+            over de handelsgeschiedenis van uw/uw bedrijf, en kunnen we informatie over de handelsgeschiedenis van uw/uw
+            bedrijf met ons delen.</li>
+          <li>Technische gegevens van analyseproviders zoals Google.</li>
+          <li>Contact-, financiële en transactiegegevens van leveranciers van technische, betalings- en bezorgdiensten.
+          </li>
+          <li>Identiteits- en contactgegevens uit openbare bronnen zoals Kamer van Koophandel.</li>
+        </ul>
+      </ul><a href="#top" data-mce-href="#top">Terug naar boven</a>
+      <h2 id="anchor4">4. HOE GEBRUIKEN WIJ UW PERSOONLIJKE GEGEVENS?</h2>
+      <hr>
+      <p>We zullen uw persoonlijke gegevens alleen gebruiken binnen de wettelijke bepalingen. We gebruiken uw
+        persoonlijke gegevens o.a.in de volgende omstandigheden:</p>
+      <ul>
+        <li>Als we het contract uitvoeren dat we op het punt staan met u aan te gaan of zijn aangegaan.</li>
+        <li>Als het noodzakelijk is voor onze rechtmatige belangen (of die van een derde partij) en uw belangen en
+          fundamentele rechten niet prevaleren boven die belangen.</li>
+        <li>Als we moeten voldoen aan een wettelijke of regelgevende verplichting.Over het algemeen hanteren wij niet de
+          rechtsgrondslag “uw toestemming” als eerste basis voor het verwerken van uw persoonlijke gegevens. Uw
+          toestemming is wel de basis voor het aan u verzenden van direct marketingcommunicatie via e-mail of
+          sms.<br><br></li>
+      </ul>U heeft het recht uw toestemming op elk moment in te trekken. Dit kunt u doen door uw account te verwijderen
+      op de website of door een e-mail te sturen naar <a data-mce-href="mailto:avg@isero.nl" href="mailto:avg@isero.nl"
+        title="avg@isero.nl">avg@isero.nl</a>.<h3>Doeleinden waarvoor wij uw persoonlijke gegevens zullen gebruiken</h3>
+      <p>We gebruiken uw persoonlijke gegevens op de onderstaande wijze en op onderstaande rechtsgronden. Waar nodig is
+        ook vermeld wat onze rechtmatige belangen zijn.Houd er rekening mee dat we uw persoonlijke gegevens voor meer
+        dan één wettelijke grond kunnen verwerken, afhankelijk van het specifieke doel van het gebruik. Wanneer wij
+        verwijzen naar rechtmatige belangen, bedoelen we het belang van ons bedrijf bij het uitvoeren en beheren van ons
+        bedrijf zodat wij in staat zijn u optimaal te bedienen. We zorgen ervoor dat we mogelijke gevolgen voor u (zowel
+        positief als negatief) en uw rechten in overweging nemen en afwegen voordat we uw persoonlijke gegevens
+        verwerken. We gebruiken uw persoonlijke gegevens niet voor activiteiten waarbij de impact op u zwaarder weegt
+        dan onze belangen (tenzij wij uw toestemming hebben of gebruik anderszins wettelijk verplicht of toegestaan
+        is).<br>Uw persoonlijke gegevens worden niet gebruikt met betrekking tot geautomatiseerde besluitvorming.</p>
+      <section id="privacy-table">
+        <div id="header-privacy-table">
+          <div class="row">
+            <div class="col"><strong>Doel/activiteit</strong></div>
+            <div class="col"><strong>Soort gegevens</strong></div>
+            <div class="col"><strong>Wettelijke grondslag voor verwerking inclusief grondslag gerechtvaardigd
+                belang</strong></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">Reageren op vragen.</div>
+          <div class="col">
+            <ol type="a">
+              <li>Identiteit</li>
+              <li>Contact</li>
+            </ol>
+          </div>
+          <div class="col">Noodzakelijk om een klantrelatie aan te gaan.</div>
+        </div>
+        <div class="row">
+          <div class="col">Uitvoeren van kredietreferentie- en fraudecontroles ten behoeve van het op rekening
+            bestellen.</div>
+          <div class="col">
+            <ol type="a">
+              <li>Identiteit</li>
+              <li>Contactpersoon</li>
+              <li>Financieel</li>
+              <li>Transactie</li>
+            </ol>
+          </div>
+          <div class="col">Noodzakelijk om een klantrelatie aan te gaan. Noodzakelijk voor onze rechtmatige belangen om
+            ons bedrijf te beschermen tegen insolvente klanten en fraude.</div>
+        </div>
+        <div class="row">
+          <div class="col">Levering van goederen en/of diensten met bijbehorende betalingsverplichting.</div>
+          <div class="col">
+            <ol type="a">
+              <li>Identiteit</li>
+              <li>Contactpersoon</li>
+              <li>Financieel</li>
+              <li>Transactie</li>
+            </ol>
+          </div>
+          <div class="col">Uitvoeren van een levering(scontract) . Noodzakelijk voor onze rechtmatige belangen en het
+            innen van vorderingen op klanten.</div>
+        </div>
+        <div class="row">
+          <div class="col">Relatiebeheer waaronder:<ol type="a">
+              <li>Informeren van wijzigingen in onze voorwaarden of ons privacybeleid</li>
+              <li>Vragen om feedback</li>
+            </ol>
+          </div>
+          <div class="col">
+            <ol type="a">
+              <li>Identiteit</li>
+              <li>Contactpersoon</li>
+              <li>Profiel</li>
+              <li>Marketing en communicatie</li>
+              <li>Gebruik</li>
+            </ol>
+          </div>
+          <div class="col">Uitvoeren van een levering(scontract) . Voldoen aan wettelijke verplichting. Noodzakelijk
+            voor onze rechtmatige belangen (voor administratieve en marketing doeleinden) Uw toestemming
+            (e-mail/sms-marketing).</div>
+        </div>
+        <div class="row">
+          <div class="col">Verbeteren van onze website, diensten, marketing en klantrelaties</div>
+          <div class="col">
+            <ol type="a">
+              <li>Technisch</li>
+              <li>Gebruik</li>
+            </ol>
+          </div>
+          <div class="col">Noodzakelijk voor onze rechtmatige belangen (om soorten klanten voor onze diensten te
+            definiëren, om onze website up-to-date en relevant te houden, om ons bedrijf te ontwikkelen en om onze
+            marketingstrategie vorm te geven).</div>
+        </div>
+        <div class="row">
+          <div class="col">Behandeling van problemen, klachten of geschillen , en om strafbare feiten, inclusief fraude,
+            te voorkomen of op te sporen</div>
+          <div class="col">
+            <ol type="a">
+              <li>Identiteit</li>
+              <li>Financieel</li>
+              <li>Technisch</li>
+              <li>Profiel</li>
+              <li>Gebruik</li>
+            </ol>
+          </div>
+          <div class="col">Om juridische claims vast te stellen, uit te oefenen of (daartegen) te verdedigen.</div>
+        </div>
+      </section>
+      <h3>Marketing/promotionele aanbiedingen</h3>
+      <p>We streven ernaar u keuzes te bieden wat betreft het gebruik van uw persoonlijke gegevens, met name op het
+        gebied van marketing.<br>Als u ermee heeft ingestemd marketinguitingen van ons te ontvangen, kunnen wij uw
+        identiteits-, contact-, technische, gebruiks- en profielgegevens gebruiken om een beeld te vormen van wat wij
+        denken dat u wilt of nodig heeft, of wat voor u interessant kan zijn. Zo bepalen wij welke goederen, diensten en
+        aanbiedingen voor u relevant kunnen zijn.<span>We zullen uw persoonlijke gegevens alleen gebruiken voor
+          marketingdoeleinden in overeenstemming met uw voorkeuren/toestemming.<br>U kunt ons op elk moment vragen te
+          stoppen met het sturen van marketingberichten door in uw persoonlijke omgeving op onze website de relevante
+          vakjes aan of uit te vinken. U kunt ook gebruik maken van de opt-outlinks die zijn opgenomen op elk
+          marketingbericht dat u van ons ontvangt of met ons contact opnemen.</span></p>
+      <h3>Cookies</h3>
+      <p>U kunt uw browser instellen om alle of sommige browsercookies te weigeren, of om u te waarschuwen wanneer
+        websites cookies plaatsen of openen. Als u cookies uitschakelt of weigert, houd er dan rekening mee dat sommige
+        delen van deze website minder goed werken. Meer informatie over de cookies die wij gebruiken leest u in ons
+        cookiebeleid.</p>
+      <h3>Verandering van doel</h3>
+      <p>We zullen uw persoonlijke gegevens alleen gebruiken voor de doeleinden waarvoor we ze hebben verzameld, tenzij
+        we redelijkerwijs van mening zijn dat we uw persoonlijke gegevens om een andere reden moeten gebruiken en die
+        reden verenigbaar is met het oorspronkelijke doel. Als u uitleg wilt over hoe de verwerking voor het nieuwe doel
+        verenigbaar is met het oorspronkelijke doel, kunt u een e-mail sturen naar avg@isero.nl<br>Als we uw
+        persoonlijke gegevens moeten gebruiken voor een niet-gerelateerd doel, zullen we u hiervan op de hoogte stellen
+        en zullen we de wettelijke basis aangeven die ons in staat stelt dit te doen.<br>Houd er rekening mee dat we uw
+        persoonlijke gegevens kunnen verwerken zonder uw medeweten of toestemming, in overeenstemming met de
+        bovenstaande regels, waar dit wettelijk is vereist of toegestaan.</p><a href="#top" data-mce-href="#top">Terug
+        naar boven</a>
+      <h2 id="anchor5">5. BEKENDMAKING VAN UW PERSOONLIJKE GEGEVENS</h2>
+      <hr>
+      <p><span>Het kan zijn dat we uw persoonlijke gegevens moeten delen met de categorieën van derden partijen die
+          hieronder worden uiteengezet voor de doeleinden die in de tabel in paragraaf 4 hierboven worden
+          uiteengezet.<br></span></p>
+      <ul>
+        <li><span>Externe derden, waaronder:</span></li>
+        <ul>
+          <li><span>zakenpartners, leveranciers en onderaannemers voor het uitvoeren van een contract dat we met hen of
+              u aangaan;</span></li>
+          <li><span>aanbieders van analyses en zoekmachines die ons helpen bij het verbeteren en optimaliseren van onze
+              diensten en website</span></li>
+          <li><span>professionele adviseurs, waaronder advocaten, banken, accountants en verzekeraars;</span></li>
+          <li><span>Belastingdienst en/of Douane, wet- en regelgevers en andere autoriteiten;</span></li>
+          <li><span>entiteiten die betrokken zijn bij kredietcontrole en fraudebestrijding, misdaadpreventie/-detectie,
+              risicobeoordeling en -beheer en geschillenbeslechting.<br></span></li>
+        </ul>
+        <li>Bij wijzigingen in eigendom van delen of het geheel zal , zullen de nieuwe eigenaren uw persoonlijke
+          gegevens op dezelfde manier gebruiken als uiteengezet in deze privacyverklaring.</li>
+      </ul>
+      <p>Wanneer deze derden onze verwerkers zijn, eisen we van hen dat ze de veiligheid van uw persoonlijke gegevens
+        respecteren en deze in overeenstemming met de wet behandelen. We staan onze externe verwerkers niet toe uw
+        persoonlijke gegevens voor hun eigen doeleinden te gebruiken en staan hen alleen toe uw persoonlijke gegevens te
+        verwerken voor specifieke doeleinden en in overeenstemming met onze instructies. Sommige van de hierboven
+        genoemde derden, bijvoorbeeld veel professionele adviseurs, de Belastingdienst en/of de douane, zijn beheerders
+        die, net als wij, onderworpen zijn aan specifieke verplichtingen op grond van wet inzake gegevensbescherming, en
+        die hun eigen privacyverklaring zullen hebben waarin wordt uiteengezet hoe zij omgaan met uw persoonlijke
+        gegevens.</p>
+      <p><a href="#top" data-mce-href="#top">Terug naar boven</a></p>
+      <h2 id="anchor6">6. OVERDRACHT VAN UW PERSOONLIJKE GEGEVENS</h2>
+      <p>We kunnen uw persoonlijke gegevens buiten Nederland overdragen aan anderen (andere Grafton Group-bedrijven en
+        onze externe dienstverleners) die deze gegevens namens ons verwerken.<br>Wanneer dergelijke overdrachten van
+        persoonlijke gegevens plaatsvinden, streven we ernaar aan u een vergelijkbare mate van bescherming van uw
+        persoonlijke gegevens te bieden door ervoor te zorgen dat ten minste een van de volgende waarborgen wordt
+        geïmplementeerd:</p>
+      <ul>
+        <li>Doorgifte van uw persoonlijke gegevens naar landen die door de Europese Commissie worden geacht een passend
+          beschermingsniveau te bieden.</li>
+        <li>Waar we bepaalde serviceproviders gebruiken, kunnen we specifieke contracten gebruiken die zijn goedgekeurd
+          door de <a href="https://eur-lex.europa.eu/legal-content/NL" target="_blank"
+            data-mce-href="https://eur-lex.europa.eu/legal-content/NL">Europese Commissie</a>.<br>Dit zal uitsluitend
+          plaatsvinden met als doel om de dienstverlening te kunnen realiseren.</li>
+      </ul><a href="#top" data-mce-href="#top">Terug naar boven</a>
+      <h2 id="anchor7">7. GEGEVENSBEVEILIGING</h2>
+      <hr>
+      <p>We hebben passende beveiligingsmaatregelen genomen om te voorkomen dat uw persoonlijke gegevens per ongeluk
+        verloren gaan, gebruikt worden of op ongeoorloofde wijze worden geopend, gewijzigd of openbaar gemaakt.
+        Daarnaast beperken we de toegang tot uw persoonlijke gegevens tot die werknemers, agenten, contractanten en
+        andere derden voor wie het noodzakelijk is hiervan op de hoogte te zijn. Door ons aangestelde verwerkers
+        verwerken uw persoonlijke gegevens alleen in onze opdracht. Aan deze verwerkers hebben wij een
+        geheimhoudingsplicht opgelegd.<br>We hebben procedures ingesteld om elke vermoedelijke inbreuk op persoonlijke
+        gegevens aan te pakken. Conform de op ons rustende wettelijke plichten zullen wij u en de aangewezen
+        toezichthouder op de hoogte stellen in geval van een (vermoedelijke) inbreuk.</p><a href="#top"
+        data-mce-href="#top">Terug naar boven</a>
+      <h2 id="anchor8">8. GEGEVENSBEWARING</h2>
+      <hr>
+      <p>We bewaren uw persoonlijke gegevens alleen zolang als dat dit nodig is voor de doeleinden waarvoor we uw
+        persoonlijke gegevens hebben verzameld en om te voldoen aan wettelijke, boekhoudkundige of
+        rapportagevereisten.<br>Om de juiste bewaartermijn voor persoonlijke gegevens te bepalen, houden we rekening met
+        de hoeveelheid, aard en gevoeligheid van de persoonlijke gegevens, het potentiële risico op schade door
+        ongeoorloofd gebruik of openbaarmaking van uw persoonlijke gegevens, de doeleinden waarvoor we uw persoonlijke
+        gegevens verwerken, of we de gestelde doeleinden op andere manieren kunnen bereiken, en de toepasselijke
+        wettelijke vereisten.<br>Details van bewaartermijnen voor verschillende soorten van uw persoonlijke gegevens
+        zijn beschikbaar in ons bewaarbeleid dat u bij ons kunt opvragen door een e-mail te sturen naar&nbsp;<a
+          href="mailto:avg@isero.nl" target="_blank" data-mce-href="mailto:avg@isero.nl">avg@isero.nl</a>.</p>
+      <p>Volgens de wet moeten we voor belastingdoeleinden basisinformatie over onze klanten (inclusief contact-,
+        identiteits-, financiële en transactiegegevens) bewaren gedurende zeven jaar nadat ze geen klant meer zijn.In
+        sommige omstandigheden kunt u ons vragen om uw gegevens te verwijderen: zie hieronder voor meer informatie. Ook
+        kunnen wij in sommige gevallen besluiten uw persoonlijke gegevens te anonimiseren (zodat deze niet langer met u
+        in verband kunnen worden gebracht) voor onderzoeks- of statistische doeleinden. Geanonimiseerde gegevens kunnen
+        wij voor onbepaalde tijd gebruiken zonder verdere kennisgeving aan u.</p><a href="#top"
+        data-mce-href="#top">Terug naar boven</a>
+      <h2 id="anchor9">9. UW WETTELIJKE RECHTEN</h2>
+      <hr>
+      <p>Op grond van de wetgeving inzake gegevensbescherming heeft u een aantal rechten met betrekking tot uw
+        persoonlijke gegevens (klik op de onderstaande links voor meer informatie over deze rechten):</p>
+      <a href="#toegang-persoonlijke-gegevens">
+        <ul>
+          <li>Toegang tot uw persoonlijke gegevens</li>
+        </ul>
+      </a>
+      <a href="#verzoek-correctie">
+        <ul>
+          <li>Verzoek om correctie van uw persoonlijke gegevens.</li>
+        </ul>
+      </a>
+      <a href="#verzoek-verwijdering">
+        <ul>
+          <li>Verzoek om verwijdering van uw persoonlijke gegevens.</li>
+        </ul>
+      </a>
+      <a href="#bezwaar-maken">
+        <ul>
+          <li>Het maken van bezwaar tegen de verwerking van uw persoonlijke gegevens.</li>
+        </ul>
+      </a>
+      <a href="#verzoek-beperking">
+        <ul>
+          <li>Verzoek beperking van de verwerking van uw persoonlijke gegevens.</li>
+        </ul>
+      </a>
+      <a href="#verzoek-overdracht">
+        <ul>
+          <li>Verzoek om overdracht van uw persoonlijke gegevens.</li>
+        </ul>
+      </a>
+      <a href="#recht-toestemming">
+        <ul>
+          <li>Recht om toestemming in te trekken.</li>
+        </ul>
+      </a>Als u een van de hierboven uiteengezette rechten wilt uitoefenen, kunt u een e-mail sturen naar&nbsp;<a
+        href="mailto:avg@isero.nl" target="_blank" data-mce-href="mailto:avg@isero.nl">avg@isero.nl</a>.<br>U hoeft geen
+      vergoeding te betalen om uw rechten uit te oefenen. We kunnen echter een redelijke vergoeding in rekening brengen
+      als uw verzoek duidelijk ongegrond, repetitief of buitensporig is. Ook kunnen wij in dat geval weigeren aan uw
+      verzoek te voldoen.<br>Mogelijk vragen we specifieke informatie van u om ons te helpen uw identiteit te bevestigen
+      en uw recht uitoefening van vorenstaande rechten verifiëren. Dit is een beveiligingsmaatregel om ervoor te zorgen
+      dat persoonlijke gegevens niet worden bekendgemaakt aan personen die geen recht hebben deze te ontvangen. We
+      kunnen ook contact met u opnemen om u om meer informatie te vragen met betrekking tot uw verzoek, zodat wij uw
+      verzoek kunnen behandelen of onze reactie kunnen versnellen.<br>We proberen binnen een maand op alle rechtmatige
+      verzoeken te reageren. Is uw verzoek bijzonder complex is of krijgen wij in korte tijd een groot aantal verzoeken
+      te verwerken, dan kan het beantwoorden van uw vragen langer duren. In dit geval zullen we u op de hoogte stellen
+      en u op de hoogte houden.&nbsp;<p>U heeft het recht om:</p>
+      <ul>
+        <li id="toegang-persoonlijke-gegevens">Verzoek om toegang tot uw persoonlijke gegevens (algemeen bekend als een
+          "toegangsverzoek van een betrokkene"). Dit recht stelt u in staat een kopie te ontvangen van de persoonlijke
+          gegevens die wij over u hebben en te controleren of wij deze persoonlijke gegevens rechtmatig verwerken.</li>
+        <li id="verzoek-correctie">Verzoek om correctie van uw persoonlijke gegevens. Met dit verzoek kunt u eventuele
+          onvolledige of onjuiste gegevens die we over u hebben, corrigeren. Het kan nodig zijn dat wij de juistheid van
+          de nieuwe gegevens die u ons verstrekt verifiëren.</li>
+        <li id="verzoek-verwijdering">Verzoek om verwijdering van uw persoonlijke gegevens. Dit recht stelt u in staat
+          ons te vragen persoonlijke gegevens te verwijderen als er geen goede reden is om door te gaan met het
+          verwerken daarvan. U heeft ook het recht ons te vragen uw persoonlijke gegevens te verwijderen wanneer u met
+          succes gebruik heeft gemaakt van uw recht bezwaar te maken tegen verwerking (zie hieronder), wanneer wij uw
+          persoonlijke gegevens mogelijk onrechtmatig hebben verwerkt of wanneer wij uw persoonlijke gegevens moeten
+          wissen om te voldoen aan de lokale wetgeving. Houd er echter rekening mee dat we niet altijd aan uw verzoek
+          tot verwijdering kunnen voldoen, bijvoorbeeld om specifieke wettelijke redenen. Deze zullen aan u, indien van
+          toepassing, in antwoord op uw verzoek worden meegedeeld.</li>
+        <li id="bezwaar-maken">Het maken van bezwaar tegen de verwerking van uw persoonlijke gegevens. U heeft het recht
+          bezwaar te maken tegen de verwerking van uw persoonlijke gegevens wanneer de rechtsgrondslag hiervoor ons
+          rechtmatige belang is (of dat van een derde partij) en u van mening bent dat dit van invloed is op uw
+          fundamentele rechten en vrijheden. U kunt ook bezwaar maken tegen de verwerking van uw persoonlijke gegevens
+          voor directe marketingdoeleinden. In sommige gevallen kunnen wij aantonen dat wij dwingende rechtmatige
+          redenen hebben om uw informatie te verwerken die zwaarder wegen dan uw rechten en vrijheden.</li>
+        <li id="verzoek-beperking">
+          <ol type="a">
+            <li>als u wilt dat wij de juistheid van de gegevens vaststellen;</li>
+            <li>wanneer ons gebruik van de gegevens onwettig is, maar u niet wilt dat wij deze wissen;</li>
+            <li>wanneer u ons nodig heeft om de gegevens te bewaren, zelfs als we deze niet langer nodig hebben, omdat u
+              deze nodig heeft om juridische claims vast te stellen, uit te oefenen of te verdedigen; of</li>
+            <li>u bezwaar hebt gemaakt tegen ons gebruik van uw gegevens, maar wij moeten verifiëren of we dwingende
+              rechtmatige redenen hebben deze toch te gebruiken.</li>
+          </ol>
+        </li>
+        <li id="verzoek-overdracht">Verzoek om overdracht van uw persoonlijke gegevens aan u of aan een derde partij.
+          Wij zullen u, of een door u gekozen derde, uw persoonlijke gegevens verstrekken in een gestructureerd,
+          gangbaar, machine leesbaar formaat. Houd er rekening mee dat dit recht alleen van toepassing is op
+          geautomatiseerde persoonlijke gegevens voor de verwerking waarvan u ons aanvankelijk toestemming heeft gegeven
+          of die wij hebben gebruikt om een contract met u uit te voeren.</li>
+        <li id="recht-toestemming">Recht om toestemming in te trekken. Wanneer uw persoonlijke gegeven worden verwerkt
+          op basis van uw toestemming heeft u het recht deze toestemming op elk moment in te trekken. Het intrekken van
+          uw toestemming heeft geen invloed op de rechtmatigheid van de verwerking die is uitgevoerd voordat u uw
+          toestemming introk. Als u uw toestemming intrekt, is het mogelijk dat we bepaalde producten of diensten niet
+          (langer) aan u kunnen aanbieden. Wanneer dit het geval is, informeren wij u hierover op het moment dat u uw
+          toestemming intrekt.</li>
+      </ul><a href="#top" data-mce-href="#top">Terug naar boven</a>
+      <h2 id="anchor10">10. TOEZICHT</h2>
+      <hr>
+      <p>We kunnen controleren en/of registreren:</p>
+      <ol type="a">
+        <li>telefoongesprekken;</li>
+        <li>transacties en activiteiten op alle contactpunten;</li>
+        <li>web, verkeer en activiteiten</li>
+      </ol>
+      <p>Deze registraties zijn bedoeld om ervoor te zorgen dat we uw instructies nauwkeurig uitvoeren, voor
+        trainingsdoeleinden, om onze diensten te verbeteren, om de veiligheid te waarborgen en fraude te voorkomen. Voor
+        een grotere veiligheid van onze klanten en medewerkers, en om criminaliteit te voorkomen en op te sporen,
+        gebruiken we cameratoezicht in en rond ons pand. Voor meer informatie over ons gebruik van CCTV kunt u een
+        e-mail sturen naar <a href="mailto:avg@isero.nl" target="_blank"
+          data-mce-href="mailto:avg@isero.nl">avg@isero.nl</a>.</p><br>
+      <a href="#top" data-mce-href="#top">Terug naar boven</a>
+    </div>
+  </section>
 </section>

@@ -1,7 +1,7 @@
 .cat-hero {
-  background: linear-gradient(135deg, #1b1b1b 0%, #0e2c25 100%);
+  background: #fff;
   color: #fff;
-  padding: 56px 0;
+  padding: 0;
   overflow: hidden;
 }
 
@@ -10,22 +10,22 @@
   align-items: center;
   gap: 40px;
   justify-content: space-between;
+  padding: 20px 15px 0;
 }
 
 .cat-hero-text {
   flex: 1 1 auto;
-  max-width: 640px;
 }
 
 .cat-hero h1 {
-  color: #fff;
+  color: #002855;
   font-size: clamp(1.8rem, 4vw, 3rem);
   margin: 16px 0 10px;
   text-transform: none;
 }
 
 .cat-hero .tagline {
-  color: var(--nx-green);
+  color: #002855;
   font-weight: 600;
   margin: 0 0 24px;
   font-size: 1.2rem;
@@ -77,12 +77,16 @@
   color: #fff;
 }
 
+section.section.cat-content {
+  background: #919d9d;
+}
+
 .cat-content .block {
   display: grid;
   grid-template-columns: 1fr 420px;
   gap: 48px;
   align-items: center;
-  padding: 40px 0;
+  padding: 0;
   border-bottom: 1px solid var(--nx-border);
 }
 
@@ -248,6 +252,21 @@
   text-align: center;
   padding: 40px 0;
 }
+
+section.section.cat-content {
+    background: #e2e6eb;
+}
+body > app-root > main > nx-category > section:nth-child(3) {
+    background: #eaeaea!important;
+}
+body > app-root > main > nx-category > section:nth-child(4) {
+    background: #fff !important;
+}
+
+
+
+
+
 
 @media (max-width: 860px) {
   .cat-hero-media {

@@ -142,7 +142,7 @@
 @media (min-width: 1200px) {
 .footer-grid {
     grid-template-columns: 0.9fr 0.6fr 0.57fr 0.6fr 0.7fr;
-    padding: 56px 20px 40px;
+    padding: 56px 0 40px;
     gap: 0;
 }
 
@@ -158,4 +158,5 @@
   .footer-grid>div:nth-child(4)>ul {
     margin-top: 32px;
   }
+  
 }
