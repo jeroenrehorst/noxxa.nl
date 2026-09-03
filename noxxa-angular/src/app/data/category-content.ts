@@ -1,9 +1,26 @@
 // AUTO-GENERATED from the original noxxa.nl pages. Do not edit by hand.
+export interface ContentGroup {
+  heading: string;
+  paragraphs: string[];
+}
+
+export interface ContentDownload {
+  // Path relative to the web root, e.g. "assets/documentatie-content/...pdf".
+  file: string;
+  label?: string;
+}
+
 export interface ContentBlock {
   heading: string;
+  // Optional secondary heading rendered under the main heading.
+  subheading?: string;
   paragraphs: string[];
   bullets: string[];
   image: string | null;
+  // Extra headed paragraph groups rendered inside the same section as the block.
+  groups?: ContentGroup[];
+  // Optional download links rendered at the end of the block text.
+  downloads?: ContentDownload[];
 }
 
 export interface CategoryContent {
@@ -30,10 +47,17 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
         "heading": "Noxxa Basic",
         "paragraphs": [
           "De Basic lijn biedt uitgebreide keuzemogelijkheden voor elke deur. Gemaakt van aluminium met een mat geborstelde F1 afwerking, is deze lijn beschikbaar in ovaal of rechthoekig schild (195x43 mm) en ronde rozet. Deze zijn te combineren met een breed scala aan deurkrukken. De schilden zijn iets groter dan standaard, waardoor ze ideaal zijn voor renovaties en oude gaten netjes bedekken.",
-          "In geborsteld RVS biedt deze lijn de drie meest populaire krukken (D-model, L-model en haaks model) op rozet, allemaal voorzien van een veermechanisme op een stalen rozet met nokken, geschikt voor zeer intensief gebruik."
         ],
         "bullets": [],
         "image": "assets/products/NX102175.png"
+      },
+        {
+        "heading": "",
+        "paragraphs": [
+          "In geborsteld RVS biedt deze lijn de drie meest populaire krukken (D-model, L-model en haaks model) op rozet, allemaal voorzien van een veermechanisme op een stalen rozet met nokken, geschikt voor zeer intensief gebruik."
+        ],
+        "bullets": [],
+        "image": "assets/products/Basic-usp.webp"
       },
       {
         "heading": "Noxxa Premium",
@@ -64,7 +88,7 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
           "Noxxa deurbeslag is verkrijgbaar in drie productlijnen: Basic, Premium en Excellent."
         ],
         "bullets": [],
-        "image": "assets/products/NX100000_v2.png"
+        "image": null
       },
       {
         "heading": "SKG en PKVW - Veiligheid gegarandeerd",
@@ -72,15 +96,15 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
           "Het veiligheidsbeslag van Noxxa voldoet aan de strengste veiligheidseisen en heeft een SKG*** certificering. De Basic en Premium lijnen voldoen tevens aan de normen van het Politie Keurmerk Veilig Wonen (PKVW). Dit biedt niet alleen maximale bescherming voor je woning, maar kan ook leiden tot een aanzienlijke korting op je verzekeringspremie. Bij een PKVW-gecertificeerde woning kan de premie tot wel 20% lager uitvallen."
         ],
         "bullets": [],
-        "image": null
-      },
-      {
-        "heading": "Eenvoudige Montage",
-        "paragraphs": [
-          "De langschilden van de drie productlijnen worden standaard geleverd met twee bevestigingssetjes voor verschillende deurdiktes. Alle langschilden hebben hetzelfde gatenpatroon, waardoor ze eenvoudig te monteren en onderling uitwisselbaar zijn. Met de speciale boormal voor veiligheidslangschilden kun je de schilden snel en foutloos monteren. Dit kan zeker bij grotere aantallen al snel een flinke besparing opleveren."
-        ],
-        "bullets": [],
-        "image": null
+        "image": "assets/products/NX100000_v2.png",
+        "groups": [
+          {
+            "heading": "Eenvoudige Montage",
+            "paragraphs": [
+              "De langschilden van de drie productlijnen worden standaard geleverd met twee bevestigingssetjes voor verschillende deurdiktes. Alle langschilden hebben hetzelfde gatenpatroon, waardoor ze eenvoudig te monteren en onderling uitwisselbaar zijn. Met de speciale boormal voor veiligheidslangschilden kun je de schilden snel en foutloos monteren. Dit kan zeker bij grotere aantallen al snel een flinke besparing opleveren."
+            ]
+          }
+        ]
       },
       {
         "heading": "Noxxa Basic",
@@ -133,11 +157,18 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
       },
       {
         "heading": "Noxxa Basic",
+        "subheading": "Betrouwbare Veiligheid voor Woningbouw",
         "paragraphs": [
-          "Betrouwbare Veiligheid voor Woningbouw. De Noxxa Basic cilinder, gecertificeerd met SKG**, biedt doeltreffende bescherming tegen gangbare inbraaktechnieken. De sleutels zijn vervaardigd uit nieuwzilver, wat zorgt voor minder slijtage en een comfortabele gebruikerservaring. Met een extra lange sleutelhals is deze cilinder ideaal in combinatie met veiligheidsbeslag met kerntrekbeveiliging. Deze kenmerken maken de Noxxa Basic cilinder een uitstekende keuze voor woningbouw, waar veiligheid en betrouwbaarheid centraal staan."
+          "De Noxxa Basic cilinder, gecertificeerd met SKG**, biedt doeltreffende bescherming tegen gangbare inbraaktechnieken. De sleutels zijn vervaardigd uit nieuwzilver, wat zorgt voor minder slijtage en een comfortabele gebruikerservaring. Met een extra lange sleutelhals is deze cilinder ideaal in combinatie met veiligheidsbeslag met kerntrekbeveiliging. Deze kenmerken maken de Noxxa Basic cilinder een uitstekende keuze voor woningbouw, waar veiligheid en betrouwbaarheid centraal staan."
         ],
         "bullets": [],
-        "image": "assets/products/Noxxa-basic_cilinder.png"
+        "image": "assets/products/Noxxa-basic_cilinder.png",
+        "downloads": [
+          {
+            "file": "assets/documentatie-content/productbladen/Productblad_Noxxa_basic_cilinder-A4.pdf",
+            "label": "Productblad Noxxa Basic cilinder"
+          }
+        ]
       },
       {
         "heading": "Noxxa Premium",

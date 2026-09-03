@@ -1,0 +1,26 @@
+<div class="nx-slider" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+  <div class="nx-slider-track">
+    @for (img of images(); track img; let i = $index) {
+    <div class="nx-slide" [class.is-active]="i === current()" [attr.aria-hidden]="i !== current()">
+      <img [src]="img" [alt]="alt()" [attr.loading]="i === 0 ? 'eager' : 'lazy'" />
+    </div>
+    }
+  </div>
+
+  @if (images().length > 1) {
+  <ul class="slick-dots">
+    @for (img of images(); track img; let i = $index) {
+    <li [class.slick-active]="i === current()">
+      <button
+        type="button"
+        (click)="goTo(i)"
+        [attr.aria-label]="'Ga naar afbeelding ' + (i + 1)"
+        [attr.aria-current]="i === current()"
+      >
+        {{ i + 1 }}
+      </button>
+    </li>
+    }
+  </ul>
+  }
+</div>

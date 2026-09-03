@@ -25,15 +25,30 @@
 </section>
 
 @for (block of content()?.blocks ?? []; track $index) {
-<section class="section cat-content">
+<section
+  class="section cat-content"
+  [class]="'cat-content--block-' + $index"
+  [class.cat-content--alt]="$index % 2 === 1"
+>
   <div class="container">
     <article class="block" [class.reverse]="$index % 2 === 1" [class.no-image]="!block.image">
       <div class="block-text">
         @if (block.heading) {
         <h2>{{ block.heading }}</h2>
         }
+        @if (block.subheading) {
+        <h3>{{ block.subheading }}</h3>
+        }
         @for (p of block.paragraphs; track $index) {
         <p>{{ p }}</p>
+        }
+        @for (group of block.groups ?? []; track $index) {
+        @if (group.heading) {
+        <h2>{{ group.heading }}</h2>
+        }
+        @for (p of group.paragraphs; track $index) {
+        <p>{{ p }}</p>
+        }
         }
         @if (block.bullets.length) {
         <ul class="block-bullets">
@@ -42,8 +57,27 @@
           }
         </ul>
         }
+        @if (block.downloads?.length) {
+        <ul class="block-downloads">
+          @for (d of block.downloads; track d.file) {
+          <li>
+            <a [href]="d.file" target="_blank" rel="noopener" download>
+              {{ d.label || 'Download productblad' }}
+            </a>
+          </li>
+          }
+        </ul>
+        }
       </div>
-      @if (block.image; as img) {
+      @if (sliderImagesFor($index); as sliderImages) {
+      <div class="block-media block-media--slider">
+        <nx-image-slider
+          [images]="sliderImages"
+          [alt]="block.heading || cat.name"
+          [interval]="5000"
+        />
+      </div>
+      } @else if (block.image; as img) {
       <div class="block-media">
         <img [src]="img" [alt]="block.heading || cat.name" loading="lazy" />
       </div>

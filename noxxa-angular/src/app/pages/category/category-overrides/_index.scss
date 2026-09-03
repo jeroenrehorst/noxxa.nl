@@ -1,0 +1,18 @@
+// Barrel file: forwards every per-category override partial into category.scss.
+// Add a new category? create `_<slug>.scss` here and forward it below.
+@forward 'binnendeurbeslag';
+@forward 'buitendeurbeslag';
+@forward 'cilinders';
+@forward 'sloten';
+@forward 'deurdrangers';
+@forward 'anti-paniekbeslag';
+@forward 'schuifdeurbeslag';
+@forward 'scharnieren';
+@forward 'valdorpels';
+@forward 'hang-en-discussloten';
+@forward 'sluitlijsten';
+@forward 'deurgrepen';
+@forward 'deuraccessoires';
+@forward 'frees-en-boormallen';
+@forward 'meerpuntssluitingen';
+@forward 'black-bluestone-onderdorpels';

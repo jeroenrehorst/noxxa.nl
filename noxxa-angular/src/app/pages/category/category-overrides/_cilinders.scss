@@ -1,0 +1,69 @@
+// Cilinders specific overrides
+:host(.cat-cilinders) {
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+    section.section.cat-content.cat-content--block-0 > div > article > div {
+    width: 100%;
+}
+  section.section.cat-content.cat-content--block-1>div>article>div>h2 {
+    width: 100%;
+  }
+section.section.cat-content.cat-content--block-1 > div > article > div {
+    display: flex;
+    flex-wrap: wrap;
+}
+  section.section.cat-content.cat-content--block-1>div>article>div>p:nth-child(2) {
+    width: 100%;
+    margin-bottom: 0;
+  }
+section.section.cat-content.cat-content--block-1 > div > article > div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px 30px;
+}
+section.section.cat-content.cat-content--block-1 > div > article > div > p:nth-child(4) {
+    width: 48.5%;
+    padding: 15px;
+    background: #fff;
+    border-radius: 0 0 8px 8px;
+}
+section.section.cat-content.cat-content--block-1 > div > article > div > p:nth-child(3) {
+    width: 48.5%;
+    padding: 15px;
+    background: #fff;
+    height: -webkit-fill-available;
+    margin-bottom: 0;
+    border-radius: 0 0 8px 8px;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
