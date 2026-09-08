@@ -24,42 +24,59 @@
   </div>
 </section>
 
-@for (block of content()?.blocks ?? []; track $index) {
+@for (group of blockGroups(); track group[0].index) {
 <section
   class="section cat-content"
-  [class]="'cat-content--block-' + $index"
-  [class.cat-content--alt]="$index % 2 === 1"
+  [class]="'cat-content--block-' + group[0].index"
+  [class.cat-content--alt]="group[0].index % 2 === 1"
+  [class.cat-content--columns]="group.length > 1"
 >
   <div class="container">
-    <article class="block" [class.reverse]="$index % 2 === 1" [class.no-image]="!block.image">
+    @for (item of group; track item.index) {
+    <article class="block" [class.reverse]="item.index % 2 === 1" [class.no-image]="!item.block.image">
       <div class="block-text">
-        @if (block.heading) {
-        <h2>{{ block.heading }}</h2>
+        @if (item.block.heading) {
+        <h2>{{ item.block.heading }}</h2>
         }
-        @if (block.subheading) {
-        <h3>{{ block.subheading }}</h3>
+        @if (item.block.subheading) {
+        <h3>{{ item.block.subheading }}</h3>
         }
-        @for (p of block.paragraphs; track $index) {
+        @for (p of item.block.paragraphs; track $index) {
         <p>{{ p }}</p>
         }
-        @for (group of block.groups ?? []; track $index) {
-        @if (group.heading) {
-        <h2>{{ group.heading }}</h2>
+        @for (p of item.block.strongParagraphs ?? []; track $index) {
+        <p><strong>{{ p.label }}</strong>{{ p.text }}</p>
         }
-        @for (p of group.paragraphs; track $index) {
+        @for (contentGroup of item.block.groups ?? []; track $index) {
+        @if (contentGroup.heading) {
+        <h2>{{ contentGroup.heading }}</h2>
+        }
+        @if (contentGroup.subheading) {
+        <h3>{{ contentGroup.subheading }}</h3>
+        }
+        @for (p of contentGroup.paragraphs; track $index) {
         <p>{{ p }}</p>
         }
         }
-        @if (block.bullets.length) {
+        @if (item.block.bullets.length) {
         <ul class="block-bullets">
-          @for (b of block.bullets; track $index) {
-          <li>{{ b }}</li>
+          @for (b of item.block.bullets; track $index) {
+          <li>
+            @if (typeof b === 'string') {
+            {{ b }}
+            } @else {
+            <strong>{{ b.label }}</strong>{{ b.text }}
+            }
+          </li>
           }
         </ul>
         }
-        @if (block.downloads?.length) {
+        @for (p of item.block.afterBullets ?? []; track $index) {
+        <p>{{ p }}</p>
+        }
+        @if (item.block.downloads?.length) {
         <ul class="block-downloads">
-          @for (d of block.downloads; track d.file) {
+          @for (d of item.block.downloads; track d.file) {
           <li>
             <a [href]="d.file" target="_blank" rel="noopener" download>
               {{ d.label || 'Download productblad' }}
@@ -69,20 +86,32 @@
         </ul>
         }
       </div>
-      @if (sliderImagesFor($index); as sliderImages) {
+      @if (sliderImagesFor(item.index); as sliderImages) {
       <div class="block-media block-media--slider">
         <nx-image-slider
           [images]="sliderImages"
-          [alt]="block.heading || cat.name"
+          [alt]="item.block.heading || cat.name"
           [interval]="5000"
         />
       </div>
-      } @else if (block.image; as img) {
+      } @else if (item.block.image; as img) {
       <div class="block-media">
-        <img [src]="img" [alt]="block.heading || cat.name" loading="lazy" />
+        <img [src]="img" [alt]="item.block.heading || cat.name" loading="lazy" />
+      </div>
+      }
+      @if (item.block.video; as video) {
+      <div class="block-media block-media--video">
+        <iframe
+          [src]="videoUrlFor(video.src)"
+          [title]="video.title"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
       </div>
       }
     </article>
+    }
   </div>
 </section>
 }

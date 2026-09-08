@@ -13,11 +13,11 @@ section.section.cat-content.cat-content--block-1.cat-content--alt > div > articl
 section.section.cat-content.cat-content--block-3.cat-content--alt > div > article > div.block-media.block-media--slider {
     background: #fff;
 }
-section.section.cat-content.cat-content--block-1.cat-content--alt[_ngcontent-ng-c1005978235] {
+section.section.cat-content.cat-content--block-1.cat-content--alt {
     background: #f5f6f7;
     padding-bottom: 5px;
 }
-section.section.cat-content.cat-content--block-2[_ngcontent-ng-c1005978235] {
+section.section.cat-content.cat-content--block-2 {
     background: #f5f6f7;
     padding-top: 5px;
 }
@@ -28,38 +28,38 @@ section.section.cat-content.cat-content--block-0 > div > article > div {
 
 
 @media (min-width: 768px) {
-.cat-content[_ngcontent-ng-c761064717]   .block[_ngcontent-ng-c761064717] {
+.cat-content .block {
     display: flex;
     gap: 10px;
     align-items: center;
     padding: 0;
     flex-direction: column;
 }
-section.section.cat-content.cat-content--block-1[_ngcontent-ng-c761064717]    > div[_ngcontent-ng-c761064717]    > article[_ngcontent-ng-c761064717]    > div[_ngcontent-ng-c761064717]    > p[_ngcontent-ng-c761064717]:nth-child(3) {
+section.section.cat-content.cat-content--block-1 > div > article > div > p:nth-child(3) {
     width: 100%;
     padding: 0;
     background: none;
     height: -webkit-fill-available;
     margin-bottom: 0;
 }
-section.section.cat-content.cat-content--block-1[_ngcontent-ng-c761064717]    > div[_ngcontent-ng-c761064717]    > article[_ngcontent-ng-c761064717]    > div[_ngcontent-ng-c761064717]    > p[_ngcontent-ng-c761064717]:nth-child(2) {
+section.section.cat-content.cat-content--block-1 > div > article > div> p:nth-child(2) {
     width: 100%;
     margin-bottom: 0;
 }
-section.section.cat-content.cat-content--block-0[_ngcontent-ng-c761064717]    > div[_ngcontent-ng-c761064717]    > article[_ngcontent-ng-c761064717]    > div[_ngcontent-ng-c761064717] {
+section.section.cat-content.cat-content--block-0 > div > article > div {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
-body > app-root > main > nx-category > section.section.cat-content.cat-content--block-0 > div > article > div.block-text > p:nth-child(2) {
+section.section.cat-content.cat-content--block-0 > div > article > div.block-text > p:nth-child(2) {
     width: 100%;
 }
-section.section.cat-content.cat-content--block-0[_ngcontent-ng-c761064717]    > div[_ngcontent-ng-c761064717]    > article[_ngcontent-ng-c761064717]    > div[_ngcontent-ng-c761064717] {
+section.section.cat-content.cat-content--block-0 > div > article > div {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
-.cat-content[_ngcontent-ng-c761064717][_ngcontent-ng-c761064717]   .block[_ngcontent-ng-c761064717][_ngcontent-ng-c761064717] {
+.cat-content .block {
     display: flex;
     gap: 10px;
     align-items: center;
@@ -67,24 +67,45 @@ section.section.cat-content.cat-content--block-0[_ngcontent-ng-c761064717]    > 
     flex-direction: row;
     flex-wrap: wrap;
 }
-body > app-root > main > nx-category > section.section.cat-content.cat-content--block-1 > div > article > div.block-text {
+section.section.cat-content.cat-content--block-1 > div > article > div.block-text {
     display: flex;
     flex-wrap: wrap;
     width: 48.5%;
     gap: 10px;
 }
-.cat-content[_ngcontent-ng-c2938711012]   .block[_ngcontent-ng-c2938711012] {
+.cat-content .block {
     display: flex;
     gap: 30px;
     align-items: center;
     padding: 0;
     max-width: unset;
 }
+section.section.cat-content.cat-content--block-1.cat-content--alt > div > article > div.block-media.block-media--slider {
+    width: 48.5%;
+}
+section.section.cat-content.cat-content--block-2 > div > article > div.block-text {
+    width: 48.5%;
+}
+section.section.cat-content.cat-content--block-2 > div > article > div.block-media {
+    width: 48.5%;
+}
+section.section.cat-content.cat-content--block-3.cat-content--alt > div > article > div.block-text {
+    width: 48.5%;
+}
+section.section.cat-content.cat-content--block-3.cat-content--alt > div > article > div.block-media.block-media--slider {
+    width: 48.5%;
+}
+section.section.cat-content.cat-content--block-4 > div > article > div.block-text {
+    width: 48.5%;
+}
+section.section.cat-content.cat-content--block-4 > div > article > div.block-media {
+    width: 48.5%;
+}
 }
 
 
 @media (min-width: 992px) {
-    .cat-content[_ngcontent-ng-c761064717][_ngcontent-ng-c761064717]   .block[_ngcontent-ng-c761064717][_ngcontent-ng-c761064717] {
+    .cat-content .block {
     flex-direction: row;
 }
 }

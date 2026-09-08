@@ -17,6 +17,138 @@
 
 
 
+  @media (min-width: 768px) {
+    section.section.cat-content.cat-content--block-1.cat-content--alt>div>article>div {
+      width: 100%;
+    }
+
+    section.section.cat-content.cat-content--block-2.cat-content>div>article>div {
+      width: 100%;
+    }
+
+    section.section.cat-content.cat-content--block-0>div>article>div.block-media>img {
+      width: 100%;
+      max-height: unset;
+      object-fit: cover;
+      height: 290px;
+    }
+
+    section.section.cat-content.cat-content--block-0>div>article>div.block-media {
+      padding: 0;
+    }
+
+    section.section.cat-content.cat-content--block-2>div>article>div.block-media {
+      padding: 0;
+    }
+
+    section.section.cat-content.cat-content--block-2>div>article>div.block-media>img {
+      width: 100%;
+      max-height: unset;
+    }
+
+    section.section.cat-content.cat-content--block-2>div>article {
+      flex-direction: row-reverse;
+    }
+
+    section.section.cat-content.cat-content--block-3.cat-content--alt>div>article>div.block-media {
+      padding: 0;
+    }
+
+    section.section.cat-content.cat-content--block-3.cat-content--alt>div>article>div.block-media>img {
+      max-height: unset;
+    }
+
+    section.section.cat-content.cat-content--block-4>div>article>div.block-media {
+      padding: 0;
+    }
+
+    section.section.cat-content.cat-content--block-4>div>article>div.block-media>img {
+      max-height: unset;
+    }
+
+    section.section.cat-content.cat-content--block-3.cat-content--alt>div>article {
+      flex-direction: row-reverse;
+    }
+
+    section.section.cat-content.cat-content--block-4>div>article {
+      flex-direction: row-reverse;
+    }
+
+    section.section.cat-content.cat-content--block-5.cat-content--alt>div>article>div {
+      width: 100%;
+    }
+
+    section.section.cat-content.cat-content--block-5.cat-content--alt>div>article>div {
+      width: 100%;
+    }
+
+    section.section.cat-content.cat-content--block-6>div>article>div {
+      width: 100%;
+    }
+
+    .cat-anti-paniekbeslag section.section.cat-content.cat-content--block-3.cat-content--alt.cat-content--columns>div>article:nth-child(2) {
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    section.section.cat-content.cat-content--block-3.cat-content--alt.cat-content--columns>div>article:nth-child(2) {
+      flex-direction: column !important;
+      justify-content: space-between;
+    }
+
+    body>app-root>main>nx-category>section.section.cat-content.cat-content--block-3.cat-content--alt.cat-content--columns>div>article:nth-child(2)>div.block-text {
+      height: auto;
+    }
+
+    section.section.cat-content.cat-content--block-3.cat-content--alt.cat-content--columns>div {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    section.section.cat-content.cat-content--block-3.cat-content--alt.cat-content--columns>div>article.block.reverse>div.block-text {
+      width: 100%;
+    }
+
+    section.section.cat-content.cat-content--block-3.cat-content--alt.cat-content--columns>div>article:nth-child(2)>div.block-text {
+      width: 100%;
+    }
+
+    section.section.cat-content.cat-content--block-3.cat-content--alt.cat-content--columns>div>article:nth-child(2) {
+      width: 48.5%;
+      padding: 15px;
+      background: #fff;
+    }
+
+    section.section.cat-content.cat-content--block-3.cat-content--alt.cat-content--columns>div>article.block.reverse {
+      flex-direction: column-reverse !important;
+      width: 48.5%;
+      padding: 15px;
+      background: #fff;
+    }
+
+    section.section.cat-content.cat-content--block-3.cat-content--alt.cat-content--columns>div>article.block.reverse>div.block-media {
+      width: 100%;
+    }
+
+    section.section.cat-content.cat-content--block-3.cat-content--alt.cat-content--columns>div>article:nth-child(2)>div.block-media {
+      width: 100%;
+    }
+
+    section.section.cat-content.cat-content--block-3.cat-content--alt.cat-content--columns>div>article:nth-child(2)>div.block-media {
+      height: auto;
+    }
+
+    section.section.cat-content.cat-content--block-3.cat-content--alt.cat-content--columns>div>article.block.reverse {
+      gap: 10px;
+    }
+  }
+
+
+  @media (min-width: 992px) {
+    .cat-anti-paniekbeslag section.section.cat-content.cat-content--block-3.cat-content--alt>div>article>div {
+      height: auto;
+    }
+  }
 
 
 
@@ -33,8 +165,4 @@
 
 
 
-
-
-
-    
 }

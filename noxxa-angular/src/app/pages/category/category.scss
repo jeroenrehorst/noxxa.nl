@@ -21,11 +21,8 @@
   flex: 1 1 auto;
 }
 
-.cat-hero h1 {
-  color: #002855;
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  margin: 16px 0 10px;
-  text-transform: none;
+.cat-grid h3 {
+    text-transform: none;
 }
 
 .cat-hero .tagline {
@@ -106,34 +103,27 @@ section.section.cat-content {
   order: 1;
 }
 
-.block-text h2 {
-  font-size: clamp(1.3rem, 2.4vw, 1.9rem);
-  margin: 0 0 16px;
-}
-
 // Headings of extra paragraph groups need breathing room from the text above.
 .block-text h2 ~ h2 {
-  margin-top: 28px;
+  margin-top: 0;
 }
 
 // Subheading sits directly under the main heading, so it pulls up closer to it.
 .block-text h3 {
   font-size: clamp(1.05rem, 1.6vw, 1.25rem);
   color: #002855;
-  margin: -8px 0 14px;
+  margin: -5px 0 5px;
 }
 
 .block-text p {
-  color: #3a3a3a;
-  margin: 0 0 14px;
+    color: #3a3a3a;
+    margin: 0 0 20px;
 }
-
 .block-bullets {
   margin: 8px 0 0;
   padding: 0;
   list-style: none;
   display: grid;
-  gap: 8px;
 }
 
 .block-bullets li {
@@ -164,7 +154,6 @@ section.section.cat-content {
   gap: 8px;
   font-weight: 600;
   color: #002855;
-  text-decoration: underline;
 }
 
 .block-downloads a::before {
@@ -175,6 +164,8 @@ section.section.cat-content {
 .block-downloads a:hover {
   color: var(--nx-green);
 }
+
+
 
 // Alterneert voor een onbeperkt aantal blocks in plaats van vaste indexen.
 section.section.cat-content.cat-content--block-0 {
@@ -347,7 +338,9 @@ body > app-root > main > nx-category > section:nth-child(4) {
 div.block-text > p:last-child {
     margin-bottom: 0;
 }
-
+section.related {
+    padding: 40px 0;
+}
 
 
 
@@ -400,5 +393,9 @@ div.block-text > p:last-child {
 }
 section.section.cat-content.cat-content--block-0 .block-media {
     background: #fff;
+}
+.block-text p {
+    color: #3a3a3a;
+    margin: 0 0 15px;
 }
 }

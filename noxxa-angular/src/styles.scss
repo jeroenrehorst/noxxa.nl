@@ -1,4 +1,7 @@
 /* Noxxa brand theme */
+@import url("https://use.typekit.net/qyc5xuk.css");
+
+
 :root {
   --nx-green: #00b388;
   --nx-green-dark: #00926f;
@@ -7,7 +10,7 @@
   --nx-gray: #6b7280;
   --nx-light: #f5f6f7;
   --nx-border: #e5e7eb;
-  --nx-max: 1180px;
+  --nx-max: 1170px;
   --nx-radius: 10px;
   --nx-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
 }
@@ -27,28 +30,80 @@ body {
 }
 
 body {
-  font-family: 'Open Sans', 'Segoe UI', Arial, sans-serif;
+  font-family: 'Museo Sans', Arial, sans-serif;
   color: #2b2b2b;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.65;
   background: #fff;
 }
 
-h1 {font-size: 37px; color: #002855;}
-h2 {font-size: 30px; color: #002855;}
-h3  {font-size: 24px; color: #002855;} 
+h1 {
+  font-size: 30px;
+  color: #002855;
+  font-family: 'Museo Sans 700', Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
 
-h1, h2, h3, h4, h5, p, ul , ol, li {
+h2 {
+  font-size: 26px;
+  color: #002855;
+  font-family: 'Museo Sans 700', Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 22px;
+  color: #002855;
+  font-family: 'Museo Sans 700', Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 18px;
+  color: #002855;
+  font-family: 'Museo Sans 700', Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 16px;
+  color: #002855;
+  font-family: 'Museo Sans 700', Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+ol,
+li {
   hyphens: auto;
   margin-bottom: 10px;
 }
 
+p {
+  font-family: 'Quicksand', Arial, sans-serif;
+  font-size: 15px;
+}
 
 h1,
 h2,
 h3 {
   line-height: 1.2;
   font-weight: 700;
+}
+
+h2 {
+  margin-top: 0;
 }
 
 a {
@@ -59,16 +114,18 @@ a {
 a:hover {
   color: var(--nx-green-dark);
 }
+
 hr {
   padding: 15px 0 20px;
 }
+
 img {
   max-width: 100%;
   height: auto;
 }
 
 .container {
-  max-width: 1170px;
+  max-width: var(--nx-max);
   margin: 0 auto;
   padding: 0 15px;
   width: 100%;
@@ -104,8 +161,49 @@ img {
 }
 
 .section {
-    padding: 30px 0;
+  padding: 30px 0;
 }
+
+.cat-content--columns .container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.cat-content--columns .block {
+  flex-direction: column;
+  gap: 24px;
+  border-bottom: none;
+}
+
+.cat-content--columns .block-text,
+.cat-content--columns .block-media {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .cat-content--columns .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.block-media--video {
+  aspect-ratio: 16 / 9;
+  height: auto;
+  padding: 0;
+}
+
+.block-media--video iframe {
+  width: auto;
+  height: auto;
+  border: 0;
+  aspect-ratio: 16 / 9.05;
+}
+
+.block-media.block-media--video {
+  height: auto;
+}
+
 
 .eyebrow {
   color: var(--nx-green);
