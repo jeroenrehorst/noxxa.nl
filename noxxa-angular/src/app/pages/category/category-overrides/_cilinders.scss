@@ -2,9 +2,59 @@
 :host(.cat-cilinders) {
 
 
-
-
-
+section.section.cat-content.cat-content--block-4 > div > article > div.block-media {
+    padding: 0;
+}
+section.section.cat-content.cat-content--block-3.cat-content--alt > div > article > div.block-media > img {
+    border-radius: 8px;
+}
+section.section.cat-content.cat-content--block-3.cat-content--alt {
+    padding-bottom: 10px;
+}
+section.section.cat-content.cat-content--block-4 {
+    padding: 10px 0;
+    background: #e2e6eb;
+}
+section.section.cat-content.cat-content--block-3.cat-content--alt > div > article > div {
+    WIDTH: 100%;
+}
+section.section.cat-content.cat-content--block-3.cat-content--alt > div > article > div {
+    width: 100%;
+}
+section.section.cat-content.cat-content--block-5.cat-content--alt {
+  background: #e2e6eb;
+  padding: 10px 0;
+}
+section.section.cat-content.cat-content--block-6 {
+    padding: 10px 0 30px;
+}
+section.section.cat-content.cat-content--block-8 {
+    padding: 15px 0;
+    background: #f5f6f7 !important;
+}
+section.section.cat-content.cat-content--block-7.cat-content--alt {
+    padding-bottom: 10px;
+}
+section.section.cat-content.cat-content--block-9.cat-content--alt {
+    background: #f5f6f7;
+    padding: 15px 0 10px;
+}
+section.section.cat-content.cat-content--block-10 {
+    padding: 10px 0;
+}
+section.section.cat-content.cat-content--block-11.cat-content--alt {
+    background: #f5f6f7;
+    padding: 10px 0 30px;
+}
+section.section.cat-content.cat-content--block-2 > div > article > div.block-media {
+    padding: 0;
+}
+section.section.cat-content.cat-content--block-10 > div > article > div.block-media {
+    padding: 0;
+}
+section.section.cat-content.cat-content--block-11.cat-content--alt.cat-content--columns > div > article.block.reverse.no-image {
+    border-bottom: none;
+}
 
 
 
@@ -43,17 +93,133 @@ section.section.cat-content.cat-content--block-1 > div > article > div > p:nth-c
     margin-bottom: 0;
     border-radius: 0 0 8px 8px;
 }
+section.section.cat-content.cat-content--block-3.cat-content--alt > div > article > div.block-media > img {
+    max-height: unset;
+}
+section.section.cat-content.cat-content--block-3.cat-content--alt > div > article > div {
+    width: 100%;
+}
+section.section.cat-content.cat-content--block-4 > div > article > div.block-media > img {
+    max-height: unset;
+    border-radius: 8px;
+}
+section.section.cat-content.cat-content--block-4 > div > article {
+    flex-direction: row-reverse;
+}
+section.section.cat-content.cat-content--block-5.cat-content--alt > div > article {
+    flex-direction: row-reverse;
+}
+section.section.cat-content.cat-content--block-5.cat-content--alt > div > article > div.block-media {
+    background: unset;
+    padding: 15px 0;
+}
+section.section.cat-content.cat-content--block-4 > div {
+    background: #fff;
+    padding: 0 15px 0 0;
+}
+section.section.cat-content.cat-content--block-5.cat-content--alt > div {
+    background: #ffffff;
+}
+section.section.cat-content.cat-content--block-5.cat-content--alt{
+    background: #e2e6eb;
+    padding: 10px 0;
+}
+section.section.cat-content.cat-content--block-6 {
+    padding: 10px 0 30px;
+}
+section.section.cat-content.cat-content--block-6 > div {
+    background: #fff;
+    padding: 15px;
+}
+section.section.cat-content.cat-content--block-6 > div > article > div {
+    width: 100%;
+}
+section.section.cat-content.cat-content--block-6 > div > article {
+    border-bottom: none;
+    flex-direction: row-reverse;
+}
+section.section.cat-content.cat-content--block-6 > div > article > div.block-media {
+  padding: 0;
+  background: #fff;
+}
+section.section.cat-content.cat-content--block-7.cat-content--alt > div > article > div {
+    width: 100%;
+}
+section.section.cat-content.cat-content--block-9.cat-content--alt > div > article {
+    flex-direction: column-reverse;
+    gap: 15px;
+}
+section.section.cat-content.cat-content--block-9.cat-content--alt > div > article > div.block-text {
+    width: 100%;
+}
+section.section.cat-content.cat-content--block-9.cat-content--alt > div > article > div.block-media {
+    width: 100%;
+    background: #fff;
+}
+section.section.cat-content.cat-content--block-9.cat-content--alt > div > article > div.block-media > img {
+    max-height: 390px;
+}
+section.section.cat-content.cat-content--block-11.cat-content--alt > div > article > div {
+    width: 100%;
+}
+section.section.cat-content.cat-content--block-4 > div {
+    border-radius: 8px;
+}
+section.section.cat-content.cat-content--block-5 > div {
+    border-radius: 8px;
+}
+section.section.cat-content.cat-content--block-6 > div {
+    border-radius: 8px;
+}
+section.section.cat-content.cat-content--block-9.cat-content--alt > div > article > div.block-media {
+    border-radius: 8px;
+}
+section.section.cat-content.cat-content--block-12 > div > article > div {
+    width: 100%;
+}
+section.section.cat-content.cat-content--block-10 > div > article > div.block-media > img {
+    padding: 5px 5px 5px 0;
+    background: #fff;
+    border-radius: 0 8px 8px 0;
+}
+section.section.cat-content.cat-content--block-10 > div > article {
+    border-radius: 8px 0 0 8px;
+    background: #fff;
+}
+section.section.cat-content.cat-content--block-10 > div > article > div.block-text {
+    padding-left: 15px;
+}
+section.section.cat-content.cat-content--block-2 > div > article > div.block-media {
+    padding: 10px;
+}
+section.section.cat-content.cat-content--block-11.cat-content--alt.cat-content--columns > div > article.block.reverse.no-image > div {
+    padding: 15px;
+    border-radius: 8px;
+    background: #fff;
+}
+section.section.cat-content.cat-content--block-11.cat-content--alt.cat-content--columns > div > article:nth-child(2) > div {
+    padding: 15px;
+    border-radius: 8px;
+    background: #fff;
+    height: -webkit-fill-available;
+}
 }
 
 
 
 
 
-
-
-
-
-
+@media (min-width: 1200px){
+section.section.cat-content.cat-content--block-4 > div {
+    max-width: 1140px;
+}
+section.section.cat-content.cat-content--block-5.cat-content--alt > div {
+    max-width: 1140px;
+}
+section.section.cat-content.cat-content--block-6 > div {
+    max-width: 1140px;
+}
+}
 
 
 

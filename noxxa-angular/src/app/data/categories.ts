@@ -59,7 +59,7 @@ export const CATEGORIES: Category[] = [
   {
     slug: 'deurdrangers',
     name: 'Deurdrangers',
-    tagline: 'Functioneel én esthetisch',
+    tagline: 'Functioneel en esthetisch',
     intro:
       'De Noxxa Premium deurdrangers zijn ontworpen om zowel functioneel als esthetisch aantrekkelijk te zijn, met opties voor verschillende deursituaties en -vereisten.',
     sections: ['Noxxa Premium Deurdrangers', 'Installatie en Gebruik'],

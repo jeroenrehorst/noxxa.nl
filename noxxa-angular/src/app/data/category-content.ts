@@ -1,8 +1,16 @@
 // AUTO-GENERATED from the original noxxa.nl pages. Do not edit by hand.
 export interface ContentGroup {
   heading: string;
+  subheading?: string;
   paragraphs: string[];
 }
+
+export interface StrongParagraph {
+  label: string;
+  text: string;
+}
+
+export type ContentBullet = string | StrongParagraph;
 
 export interface ContentDownload {
   // Path relative to the web root, e.g. "assets/documentatie-content/...pdf".
@@ -10,17 +18,27 @@ export interface ContentDownload {
   label?: string;
 }
 
+export interface ContentVideo {
+  src: string;
+  title: string;
+}
+
 export interface ContentBlock {
   heading: string;
   // Optional secondary heading rendered under the main heading.
   subheading?: string;
   paragraphs: string[];
-  bullets: string[];
+  bullets: ContentBullet[];
+  // Optional paragraphs rendered after the bullet list.
+  afterBullets?: string[];
   image: string | null;
+  // Paragraphs with an inline bold label.
+  strongParagraphs?: StrongParagraph[];
   // Extra headed paragraph groups rendered inside the same section as the block.
   groups?: ContentGroup[];
   // Optional download links rendered at the end of the block text.
   downloads?: ContentDownload[];
+  video?: ContentVideo;
 }
 
 export interface CategoryContent {
@@ -148,12 +166,20 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
       {
         "heading": "Relock: Duurzaam, Veilig en Kostenbesparend",
         "paragraphs": [
-          "Bij Noxxa staat duurzaamheid voorop. Daarom bieden wij cilinderprofielen met de unieke \"Relock\" functie. Maar wat houdt deze functie precies in? Met een simpele handeling maakt u alle voorgaande sleutels onbruikbaar, wat betekent dat de cilinders na de bouwfase gewoon kunnen blijven zitten, zonder de noodzaak van tijdelijke cilinders. Dit minimaliseert de risico's van sleutelverlies of -diefstal, aangezien u de cilinder direct kunt omstellen.",
-          "Voordelen voor Aannemers: Na de bouwfase hoeft u geen cilinders meer te vervangen, wat zorgt voor aanzienlijke tijd- en kostenbesparingen. Geen gedoe met administratie of het vervangen van tijdelijke cilinders. Tijdens de bouw opent en sluit u alle deuren met slechts een sleutel, wat de efficientie aanzienlijk verhoogt.",
-          "Voordelen voor Huiseigenaren: Bij sleutelverlies hoeft u geen nieuwe cilinders aan te schaffen, wat zorgt voor aanzienlijke kostenbesparingen. Met de Relock-functie kunt u direct de beveiliging verhogen door de cilinder om te stellen. U behoudt volledige controle over uw sluitsysteem, zonder complexe procedures."
+          "Bij Noxxa staat duurzaamheid voorop. Daarom bieden wij cilinderprofielen met de unieke \"Relock\" functie. Maar wat houdt deze functie precies in? Met een simpele handeling maakt u alle voorgaande sleutels onbruikbaar, wat betekent dat de cilinders na de bouwfase gewoon kunnen blijven zitten, zonder de noodzaak van tijdelijke cilinders. Dit minimaliseert de risico's van sleutelverlies of -diefstal, aangezien u de cilinder direct kunt omstellen."
         ],
         "bullets": [],
-        "image": null
+        "image": null,
+        "strongParagraphs": [
+          {
+            "label": "Voordelen voor Aannemers:",
+            "text": " Na de bouwfase hoeft u geen cilinders meer te vervangen, wat zorgt voor aanzienlijke tijd- en kostenbesparingen. Geen gedoe met administratie of het vervangen van tijdelijke cilinders. Tijdens de bouw opent en sluit u alle deuren met slechts een sleutel, wat de efficientie aanzienlijk verhoogt."
+          },
+          {
+            "label": "Voordelen voor Huiseigenaren:",
+            "text": " Bij sleutelverlies hoeft u geen nieuwe cilinders aan te schaffen, wat zorgt voor aanzienlijke kostenbesparingen. Met de Relock-functie kunt u direct de beveiliging verhogen door de cilinder om te stellen. U behoudt volledige controle over uw sluitsysteem, zonder complexe procedures."
+          }
+        ]
       },
       {
         "heading": "Noxxa Basic",
@@ -173,28 +199,116 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
       {
         "heading": "Noxxa Premium",
         "paragraphs": [
-          "Flexibiliteit en Veiligheid op Maat. De Noxxa Premium lijn biedt diverse sleutelprofielen, elk met unieke eigenschappen en mogelijkheden.",
-          "Noxxa Vitess: De veelzijdige Noxxa Vitess profielcilinder biedt zowel gelijksluitende als verschillend sluitende opties, evenals complete sluitsystemen. Ideaal voor woningbouw, middelgrote utiliteitsprojecten en standaard sluitplannen. De robuuste, moeilijk te kopieren sleutel van nieuwzilver biedt, in combinatie met het unieke gepatenteerde Intop-systeem, extra beveiliging en duurzaamheid. Optioneel verkrijgbaar met de Relock-functie.",
-          "Noxxa 8900: De Noxxa Premium 8900 cilinderlijn is flexibel toepasbaar in zowel woningbouw als utiliteitsbouw. Verkrijgbaar in SKG** en SKG*** uitvoeringen, biedt deze lijn opties voor zowel verschillende als gelijksluitende cilinders. De cilinders zijn beschikbaar in messing, mat vernikkeld en op aanvraag in andere kleuren.",
-          "Noxxa 1200: De Noxxa Premium 1200 cilinder combineert SKG**, SKG*** en ongecertificeerde uitvoeringen binnen een sluitsysteem, ideaal voor zowel woningbouw als utiliteitsbouw. De complexe sleutelprofielen maken het kopieren van sleutels vrijwel onmogelijk en de cilinder wordt geleverd met een certificaat voor extra beveiliging."
+          "Flexibiliteit en Veiligheid op Maat. De Noxxa Premium lijn biedt diverse sleutelprofielen, elk met unieke eigenschappen."
+        ],
+        "bullets": [],
+        "image": null
+      },
+      {
+        "heading": "",
+        "subheading": "Noxxa Vitess",
+        "paragraphs": [
+          "De veelzijdige Noxxa Vitess profielcilinder biedt zowel gelijksluitende als verschillend sluitende opties, evenals complete sluitsystemen. Ideaal voor woningbouw, middelgrote utiliteitsprojecten en standaard sluitplannen. De robuuste, moeilijk te kopieren sleutel van nieuwzilver biedt, in combinatie met het unieke gepatenteerde Intop-systeem, extra beveiliging en duurzaamheid. Optioneel verkrijgbaar met de Relock-functie."
         ],
         "bullets": [],
         "image": "assets/products/Noxxa-Vitess-sleutel.jpg"
       },
       {
-        "heading": "Noxxa Excellent",
+        "heading": "",
+        "subheading": "Noxxa 8900",
         "paragraphs": [
-          "Voldoet aan de Hoogste Veiligheidseisen. De Noxxa Excellent lijn is speciaal ontworpen voor de meest veeleisende situaties en biedt cilinders die aan de hoogste veiligheidseisen voldoen.",
-          "Noxxa DMB profielcilinder: De Noxxa DMB-cilinder combineert veiligheid, betrouwbaarheid en milieubewuste keuzes in een oplossing. De cilinder is SKG*** gecertificeerd, voorzien van magneetbeveiliging tegen ongewenst kopieren en gepatenteerd tot 2038. Met de optionele Relock 2-in-1 functie blijft de cilinder tijdens de bouwfase zitten en worden onnodige vervangingen voorkomen. Zo kies je voor een veilige en toekomstgerichte oplossing.",
-          "Modulair systeem: De cilinder is modulair op te bouwen. Tijdens het maken van sluitplannen wordt alles zorgvuldig afgestemd en gecontroleerd. Mocht er toch een verkeerde meting worden gedaan, dan kan de cilinder ter plekke worden aangepast met verlengstukken. Dankzij deze opbouw is hij geschikt voor middelgrote tot grote sluitsystemen en blijft hij flexibel bij wijzigingen tijdens of na de montage.",
-          "Duurzaamheid: De cilinder is klimaatneutraal en draagt actief bij aan CO2-reductie. Door het gebruik van zamak in plaats van lood wordt de uitstoot met 46% verlaagd; de resterende uitstoot wordt volledig gecompenseerd via een erkend klimaatproject.",
-          "Noxxa Bravus: De Noxxa Bravus cilinders bieden maximale veiligheid met een keersleutelsysteem dat voldoet aan het SKG*** keurmerk. De cilinders en vormvaste sleutels zijn uitgerust met het gepatenteerde Intellitec-systeem voor optimale beveiliging. Deze cilinders worden geleverd met een veiligheidscertificaat om ongeautoriseerd kopieren te voorkomen en zijn geschikt voor zowel eengezinswoningen als complexe sluitsystemen. Optioneel leverbaar met Relock-functie.",
-          "Noxxa Look & Feel: De Noxxa Look & Feel cilinder biedt een perfecte balans tussen veiligheid en stijl, met een keersleutel profiel en geavanceerde beveiligingstechnologieen zoals 3D-profieltechnologie en zijdelingse stiften. Ideaal voor locaties waar zowel functionaliteit, veiligheid als een eigentijds design gewenst zijn, zoals luxe appartementencomplexen en kantoren. Optioneel verkrijgbaar met Relock-functie.",
-          "Noxxa 8900: De Noxxa 8900 MP cilinder biedt ongeevenaarde bescherming met een magneetsleutel die een extra vergrendeling in de cilinder activeert. Met SKG*** certificering en een meegeleverd veiligheidscertificaat is deze cilinder de ideale keuze voor toepassingen waar maximale veiligheid bij gelijksluitende cilinders vereist is.",
-          "Noxxa 1200: De Noxxa 1200 MP cilinder biedt dezelfde innovatieve magneetfunctie, speciaal ontwikkeld voor sluitsystemen. Perfect geschikt voor zowel luxe woningbouw als utiliteitsbouw waar strenge veiligheidseisen gelden."
+          "De Noxxa Premium 8900 cilinderlijn is flexibel toepasbaar in zowel woningbouw als utiliteitsbouw. Verkrijgbaar in SKG** en SKG*** uitvoeringen, biedt deze lijn opties voor zowel verschillende als gelijksluitende cilinders. De cilinders zijn beschikbaar in messing, mat vernikkeld en op aanvraag in andere kleuren."
         ],
         "bullets": [],
-        "image": "assets/products/dmb_cilinder_en_sleutel.png"
+        "image": "assets/products/cilinders/8900-cilinder-en-sleutel.webp"
+      },
+      {
+        "heading": "",
+        "subheading": "Noxxa 1200",
+        "paragraphs": [
+          "De Noxxa Premium 1200 cilinder combineert SKG**, SKG*** en ongecertificeerde uitvoeringen binnen een sluitsysteem, ideaal voor zowel woningbouw als utiliteitsbouw. De complexe sleutelprofielen maken het kopieren van sleutels vrijwel onmogelijk en de cilinder wordt geleverd met een certificaat voor extra beveiliging."
+        ],
+        "bullets": [],
+        "image": "assets/products/cilinders/1200-cilinder-en-sleutel.webp"
+      },
+      {
+        "heading": "Noxxa Excellent",
+        "paragraphs": [
+          "Voldoet aan de Hoogste Veiligheidseisen. De Noxxa Excellent lijn is speciaal ontworpen voor de meest veeleisende situaties en biedt cilinders die aan de hoogste veiligheidseisen voldoen."
+        ],
+        "bullets": [],
+        "image": null
+      },
+      {
+        "heading": "",
+        "paragraphs": [],
+        "bullets": [],
+        "image": "assets/products/dmb_cilinder_en_sleutel.png",
+        "groups": [
+          {
+            "heading": "",
+            "subheading": "Noxxa DMB profielcilinder",
+            "paragraphs": [
+              "De Noxxa DMB-cilinder combineert veiligheid, betrouwbaarheid en milieubewuste keuzes in een oplossing. De cilinder is SKG*** gecertificeerd, voorzien van magneetbeveiliging tegen ongewenst kopieren en gepatenteerd tot 2038. Met de optionele Relock 2-in-1 functie blijft de cilinder tijdens de bouwfase zitten en worden onnodige vervangingen voorkomen. Zo kies je voor een veilige en toekomstgerichte oplossing."
+            ]
+          },
+          {
+            "heading": "",
+            "subheading": "Modulair systeem",
+            "paragraphs": [
+              "De cilinder is modulair op te bouwen. Tijdens het maken van sluitplannen wordt alles zorgvuldig afgestemd en gecontroleerd. Mocht er toch een verkeerde meting worden gedaan, dan kan de cilinder ter plekke worden aangepast met verlengstukken. Dankzij deze opbouw is hij geschikt voor middelgrote tot grote sluitsystemen en blijft hij flexibel bij wijzigingen tijdens of na de montage."
+            ]
+          },
+          {
+            "heading": "",
+            "subheading": "Duurzaamheid",
+            "paragraphs": [
+              "De cilinder is klimaatneutraal en draagt actief bij aan CO2-reductie. Door het gebruik van zamak in plaats van lood wordt de uitstoot met 46% verlaagd; de resterende uitstoot wordt volledig gecompenseerd via een erkend klimaatproject."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "",
+        "subheading": "Noxxa Bravus",
+        "paragraphs": [
+          "De Noxxa Bravus cilinders bieden maximale veiligheid met een keersleutelsysteem dat voldoet aan het SKG*** keurmerk. De cilinders en vormvaste sleutels zijn uitgerust met het gepatenteerde Intellitec-systeem voor optimale beveiliging. Deze cilinders worden geleverd met een veiligheidscertificaat om ongeautoriseerd kopieren te voorkomen en zijn geschikt voor zowel eengezinswoningen als complexe sluitsystemen. Optioneel leverbaar met Relock-functie."
+        ],
+        "bullets": [],
+        "image": "assets/products/cilinders/Noxxa-bravus-excellent-cilinder-en-sleutel.webp",
+        "downloads": [
+          {
+            "file": "assets/documentatie-content/productbladen/Noxxa-bravus-excellent-productblad.pdf",
+            "label": "Productblad Noxxa Bravus Excellent"
+          }
+        ]
+      },
+      {
+        "heading": "",
+        "subheading": "Noxxa Look & Feel",
+        "paragraphs": [
+          "De Noxxa Look & Feel cilinder biedt een perfecte balans tussen veiligheid en stijl, met een keersleutel profiel en geavanceerde beveiligingstechnologieen zoals 3D-profieltechnologie en zijdelingse stiften. Ideaal voor locaties waar zowel functionaliteit, veiligheid als een eigentijds design gewenst zijn, zoals luxe appartementencomplexen en kantoren. Optioneel verkrijgbaar met Relock-functie."
+        ],
+        "bullets": [],
+        "image": "assets/products/cilinders/Noxxa-Look-FeelV2.webp"
+      },
+      {
+        "heading": "",
+        "subheading": "Noxxa 8900",
+        "paragraphs": [
+          "De Noxxa 8900 MP cilinder biedt ongeevenaarde bescherming met een magneetsleutel die een extra vergrendeling in de cilinder activeert. Met SKG*** certificering en een meegeleverd veiligheidscertificaat is deze cilinder de ideale keuze voor toepassingen waar maximale veiligheid bij gelijksluitende cilinders vereist is."
+        ],
+        "bullets": [],
+        "image": null
+      },
+      {
+        "heading": "",
+        "subheading": "Noxxa 1200",
+        "paragraphs": [
+          "De Noxxa 1200 MP cilinder biedt dezelfde innovatieve magneetfunctie, speciaal ontwikkeld voor sluitsystemen. Perfect geschikt voor zowel luxe woningbouw als utiliteitsbouw waar strenge veiligheidseisen gelden."
+        ],
+        "bullets": [],
+        "image": null
       }
     ]
   },
@@ -205,7 +319,14 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
       {
         "heading": "Sloten voor woningbouw en projecten",
         "paragraphs": [
-          "Onze veelzijdige woningbouwsloten zijn de ideale keuze voor al uw binnendeuren. Of het nu een nieuwe woonkamerdeur, kastdeur, WC-deur, badkamerdeur of slaapkamerdeur van een slot wilt voorzien of bestaande hoofdsloten wilt vervangen bij een defect slot of interieur wijziging, onze sloten zijn eenvoudig te monteren en passen perfect.",
+          "Onze veelzijdige woningbouwsloten zijn de ideale keuze voor al uw binnendeuren. Of het nu een nieuwe woonkamerdeur, kastdeur, WC-deur, badkamerdeur of slaapkamerdeur van een slot wilt voorzien of bestaande hoofdsloten wilt vervangen bij een defect slot of interieur wijziging, onze sloten zijn eenvoudig te monteren en passen perfect."
+        ],
+        "bullets": [],
+        "image": null
+      },
+      {
+        "heading": "",
+        "paragraphs": [
           "Onze binnendeursloten zijn universeel inzetbaar, wat betekent dat ze geschikt zijn voor zowel links- als rechtsdraaiende deuren. U kunt kiezen uit een voorplaat in zwarte, witte of geborsteld RVS-afwerking. De afgeronde voorplaat meet 174x20 mm en het slot heeft een doornmaat van 50 mm.",
           "Om verspilling te minimaliseren, worden onze sloten zonder sluitplaat geleverd. Mocht u deze toch nodig hebben, zijn ze uiteraard apart verkrijgbaar.",
           "Voor wie op zoek is naar een strakke afwerking, bieden wij ook woningbouwsloten met een magneetdagschoot. Bij het sluiten van de deur wordt de dagschoot door een magneet uitgetrokken, waardoor de deur vergrendelt. In geopende stand steekt de dagschoot niet uit. Dit voorkomt beschadigingen aan het kozijn en zorgt voor een nette uitstraling. Deze sloten worden geleverd met sluitkom en sluitplaat, aangezien ze vaak in nieuwe situaties worden toegepast."
@@ -215,29 +336,44 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
       },
       {
         "heading": "Projectsloten voor Utiliteitsbouw",
+        "paragraphs": [],
+        "bullets": [
+          "Utiliteitsprojecten",
+          "Brandwerende deuren",
+          "Vochtige omgevingen"
+        ],
+        "afterBullets": [
+          "Noxxa biedt een uitgebreid assortiment projectsloten, waaronder dag- en nachtsloten, toiletsloten, loopsloten, kastsloten en centraalsloten, met of zonder dagschootblokkering. Onze sloten hebben een uniforme slotkastsparing met een doornmaat van 60 mm en zijn verkrijgbaar met zowel afgeronde als rechthoekige voorplaten. Daarnaast bieden wij ook projectsloten met een magneetvariant."
+        ],
+        "image": "assets/products/sloten/Foto-dagschoot-keren-met-uitleg.webp"
+      },
+      {
+        "heading": "",
         "paragraphs": [
-          "Noxxa biedt een uitgebreid assortiment projectsloten, waaronder dag- en nachtsloten, toiletsloten, loopsloten, kastsloten en centraalsloten, met of zonder dagschootblokkering. Onze sloten hebben een uniforme slotkastsparing met een doornmaat van 60 mm en zijn verkrijgbaar met zowel afgeronde als rechthoekige voorplaten. Daarnaast bieden wij ook projectsloten met een magneetvariant.",
           "Onze projectsloten zijn ontworpen voor uiteenlopende toepassingen zoals:",
           "Deze robuuste sloten zijn getest volgens de Europese norm (NEN)-EN 122090 en kunnen zware deuren tot 200 kg moeiteloos aan. Ze hebben een uitstekende corrosieweerstand, bewezen door een maximale score van 240 uur in de zoutsproeitest. Bovendien zijn ze geschikt voor brandwerende deuren volgens de (NEN-EN 1634-1) norm.",
           "Unieke kenmerken van Noxxa Projectsloten:"
         ],
         "bullets": [
-          "Utiliteitsprojecten",
-          "Brandwerende deuren",
-          "Vochtige omgevingen",
           "Anti-frictiedagschoot met kunststof inzet voor fluisterstille werking",
           "Massieve RVS dag- en nachtschoten en klemtuimelaar voor duurzaamheid en kracht",
           "Voorzien van stofbussen in de patentgaten ter bescherming tegen vuil",
           "Geschikt voor zowel links- als rechtsdraaiende deuren dankzij de omkeerbare dagschoot"
         ],
-        "image": "assets/products/Foto-USPs-projectslotenV3.jpg"
+        "image": "assets/products/sloten/Foto-USPs-projectslotenV3.webp",
+        "downloads": [
+          {
+            "file": "assets/documentatie-content/productbladen/Productblad_noxxa_projectsloten_A4_LR.pdf",
+            "label": "Productblad Noxxa Projectsloten"
+          }
+        ]
       },
       {
         "heading": "Smaldeursloten voor Smalle Deurstijlen",
         "paragraphs": [
           "Voor deuren met een smalle deurstijl biedt Noxxa speciale smaldeursloten. Deze insteeksloten hebben een ondiepe slotkast, ideaal voor montage in bijvoorbeeld stalen deuren met smalle stijlen en veel glaspartijen.",
-          "De Noxxa smaldeursloten zijn beschikbaar in twee uitvoeringen en verschillende doornmaten:",
-          "De draairichting van de Noxxa smaldeursloten kan eenvoudig aangepast worden en de dagschoot is verstelbaar van 10 naar 14 mm voor een optimale pasvorm."
+          "De draairichting van de Noxxa smaldeursloten kan eenvoudig aangepast worden en de dagschoot is verstelbaar van 10 naar 14 mm voor een optimale pasvorm.",
+          "De Noxxa smaldeursloten zijn beschikbaar in twee uitvoeringen en verschillende doornmaten:"
         ],
         "bullets": [
           "Dag- en nachtslot - PC92 - 240 x 22 mm",
@@ -265,17 +401,45 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
         "paragraphs": [
           "De Noxxa Premium deurdrangers zijn ontworpen om zowel functioneel als esthetisch aantrekkelijk te zijn, met opties voor verschillende deursituaties en -vereisten. Hier is een overzicht van de belangrijkste kenmerken en beschikbare opties:"
         ],
+        "bullets": [],
+        "image": ""
+      },
+
+      {
+        "heading": "",
+        "paragraphs": [
+          ""
+        ],
         "bullets": [
           "Schaararm deurdrangers: 3 modellen",
           "Glijarmdeurdrangers: 6 modellen beschikbaar in twee varianten:",
-          "Uitvoering B: Voor deurmontage aan de scharnierzijde of kozijndorpelmontage aan de niet-scharnierzijde.",
-          "Uitvoering BG: Voor deurmontage aan de niet-scharnierzijde of kozijndorpelmontage aan de scharnierzijde.",
+          {
+            "label": "Uitvoering B:",
+            "text": " Voor deurmontage aan de scharnierzijde of kozijndorpelmontage aan de niet-scharnierzijde."
+          },
+          {
+            "label": "Uitvoering BG:",
+            "text": " Voor deurmontage aan de niet-scharnierzijde of kozijndorpelmontage aan de scharnierzijde."
+          },
+            ],
+        "image": "assets/products/NX200SA_NX100592.png"
+      },
+
+
+      {
+        "heading": "",
+        "paragraphs": [
+          ""
+        ],
+        "bullets": [
           "Innovatieve Ellipsvormige As: Zorgt voor een verminderde openingsdruk, waardoor deuren soepeler openen zonder zware tegendruk.",
           "Kleuropties: Standaard zilver, met de NX3400 en NX3500 modellen ook beschikbaar in zwart voor een strakke, moderne uitstraling.",
           "Extra Opties: Openingsbegrenzers en vastzetinrichtingen zijn optioneel verkrijgbaar en eenvoudig te monteren in de glijarm voor extra functionaliteit."
         ],
         "image": "assets/products/NX200SA_NX100592.png"
       },
+
+
       {
         "heading": "Installatie en Gebruik",
         "paragraphs": [
@@ -283,7 +447,13 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
           "De Noxxa Premium deurdrangers zijn dus geschikt voor diverse toepassingen en bieden gebruiksgemak, veelzijdigheid en een modern design dat past bij verschillende interieurs en exterieurs."
         ],
         "bullets": [],
-        "image": null
+        "image": null,
+        "downloads": [
+          {
+            "file": "assets/documentatie-content/montagehandleidingen/Noxxa-Folder_Deurdrangers_stroomschema.webp",
+            "label": "Stroomschema Noxxa Deurdrangers"
+          }
+        ]
       }
     ]
   },
@@ -292,20 +462,12 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
     "heroImage": "assets/products/image-anti-paniekbeslag.svg",
     "blocks": [
       {
-        "heading": "",
-        "paragraphs": [
-          "Anti-paniekbeslag van Noxxa Premium: Veiligheid wanneer elke seconde telt."
-        ],
-        "bullets": [],
-        "image": null
-      },
-      {
         "heading": "Inbouw Anti-paniekbeslag voor Nooduitgangen",
         "paragraphs": [
           "Wanneer elke seconde telt, biedt Noxxa inbouw anti-paniekbeslag de zekerheid die u nodig heeft. Met Noxxa anti-paniekbeslag insteek bent u verzekerd van een veilige en snelle toegang tot nooduitgangen. Dit beslag is speciaal ontworpen voor maximale veiligheid en gebruiksgemak, zodat uw uitgangen altijd toegankelijk zijn, zelfs in de meest stressvolle situaties."
         ],
         "bullets": [],
-        "image": null
+        "image": "assets/products/nooduitgang.jpg"
       },
       {
         "heading": "Waarom Kiezen voor Noxxa Anti-paniekbeslag?",
@@ -321,20 +483,20 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
           "Bij Noxxa staat kwaliteit en betrouwbaarheid voorop. Ons anti-paniekbeslag voldoet aan de strengste Europese normen, waaronder EN 1125 en EN 179, om maximale veiligheid te garanderen."
         ],
         "bullets": [],
-        "image": null
+        "image":  "assets/products/vluchtwegtechniek/en1125_en179.jpg",
       },
       {
-        "heading": "NEN-EN 1125",
+        "heading": "EN 1125",
         "paragraphs": [
-          "De NEN-EN 1125 is specifiek ontwikkeld voor nooduitgangen in openbare gebouwen waar grote aantallen mensen door moeten. Deze norm is cruciaal voor situaties waarin paniek kan ontstaan en waar een snelle, intuitieve bediening van de deur noodzakelijk is. Hier mag alleen een paniekbalk of pushbar toegepast worden."
+          "De EN 1125 is specifiek ontwikkeld voor nooduitgangen in openbare gebouwen waar grote aantallen mensen door moeten. Deze norm is cruciaal voor situaties waarin paniek kan ontstaan en waar een snelle, intuitieve bediening van de deur noodzakelijk is. Hier mag alleen een paniekbalk of pushbar toegepast worden."
         ],
         "bullets": [],
         "image": "assets/products/anti-paniek-image1V2.jpg"
       },
       {
-        "heading": "NEN-EN 179",
+        "heading": "EN 179",
         "paragraphs": [
-          "Voor kantoren en niet-openbare ruimten waar minder paniek verwacht wordt, is de NEN-EN 179 van toepassing. Deze norm vereist dat nooduitgangen met een enkele handeling, zoals een duwplaat of hendel, geopend kunnen worden."
+          "Voor kantoren en niet-openbare ruimten waar minder paniek verwacht wordt, is de EN 179 van toepassing. Deze norm vereist dat nooduitgangen met een enkele handeling, zoals een duwplaat of hendel, geopend kunnen worden."
         ],
         "bullets": [],
         "image": "assets/products/anti-paniek-image2V2.jpg"
@@ -375,7 +537,11 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
           "De montage van onze schuifdeursystemen is eenvoudig en efficient, waardoor u snel kunt genieten van een perfect werkend systeem."
         ],
         "bullets": [],
-        "image": null
+        "image": null,
+        "video": {
+          "src": "https://www.youtube.com/embed/FTysQphAyKY",
+          "title": "Instructievideo Luxeslide NK100 aangepast v3"
+        }
       },
       {
         "heading": "Luxeslide NK 100: Standaard en Luxe",

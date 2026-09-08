@@ -8,10 +8,22 @@
 
 
 
+section.section.cat-content.cat-content--block-1.cat-content--alt > div > article > div.block-media.block-media--video {
+    height: auto;
+}
+
+section.section.cat-content.cat-content--block-3.cat-content--alt > div > article > div.block-media {
+    padding: 0;
+}
 
 
-
-
+@media (min-width: 768px) {
+section.section.cat-content.cat-content--block-3.cat-content--alt > div > article > div.block-media > img {
+    width: 100%;
+    max-height: unset;
+    border-radius: 8px;
+}
+}
 
 
 
