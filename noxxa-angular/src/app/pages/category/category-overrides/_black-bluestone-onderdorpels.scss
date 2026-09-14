@@ -14,7 +14,14 @@
 
 
 
-
+@media (min-width: 768px) { 
+section.section.cat-content.cat-content--block-1.cat-content--alt > div > article > div {
+width: 100%;
+    }
+section.section.cat-content.cat-content--block-2 > div > article {
+    flex-direction: row-reverse;
+}
+}
 
 
 

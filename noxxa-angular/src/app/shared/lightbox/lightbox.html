@@ -1,0 +1,31 @@
+@if (lightbox.image(); as image) {
+<div class="nx-lightbox" role="dialog" aria-modal="true" (click)="lightbox.close()">
+  <button
+    type="button"
+    class="nx-lightbox__close"
+    (click)="lightbox.close()"
+    aria-label="Sluiten"
+  >
+    &times;
+  </button>
+  <div class="nx-lightbox__stage" (click)="$event.stopPropagation()">
+    <img class="nx-lightbox__img" [src]="image.src" [alt]="image.alt" />
+    @if (lightbox.images().length > 1) {
+    <div class="nx-lightbox__thumbs">
+      @for (thumb of lightbox.images(); track thumb.src; let i = $index) {
+      <button
+        type="button"
+        class="nx-lightbox__thumb"
+        [class.is-active]="i === lightbox.index()"
+        (click)="lightbox.goTo(i)"
+        [attr.aria-label]="'Toon afbeelding ' + (i + 1)"
+        [attr.aria-current]="i === lightbox.index()"
+      >
+        <img [src]="thumb.src" [alt]="thumb.alt" loading="lazy" />
+      </button>
+      }
+    </div>
+    }
+  </div>
+</div>
+}

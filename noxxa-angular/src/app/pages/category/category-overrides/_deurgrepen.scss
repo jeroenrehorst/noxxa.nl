@@ -14,9 +14,23 @@
 
 
 
+section.section.cat-content.cat-content--block-0 > div > article > div {
+    width: 100%;
+}
+section.section.cat-content.cat-content--block-2 > div > article > div.block-text > p:nth-child(5) {
+    margin-top: 15px;
+    font-weight: 700;
+}
 
 
 
+
+
+@media (min-width: 1200px) {
+    section.section.cat-content.cat-content--block-2 ::ng-deep img {
+    max-height: 430px !important;
+}
+}
 
 
 

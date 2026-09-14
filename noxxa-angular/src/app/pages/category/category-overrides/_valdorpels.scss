@@ -2,6 +2,105 @@
 :host(.cat-valdorpels) {
 
 
+  section.section.cat-content.cat-content--block-4>div>article>div.block-media {
+    padding: 0;
+  }
+
+
+
+
+
+
+
+
+
+
+  @media (max-width: 767px) {
+    section.section.cat-content.cat-content--block-2>div>article>div.block-media.block-media--slider {
+      background: #e2e6eb;
+    }
+  }
+
+
+
+
+  @media (min-width: 768px) {
+    section.section.cat-content.cat-content--block-0>div>article>div {
+      width: 100%;
+    }
+
+    section.section.cat-content.cat-content--block-3.cat-content--alt>div>article>div.block-media {
+      background: #fff;
+    }
+
+    .block-media.block-media--slider {
+      padding: 0;
+    }
+
+    section.section.cat-content.cat-content--block-4>div>article>div.block-media>a>img {
+      max-height: 200px;
+    }
+
+    section.section.cat-content.cat-content--block-4>div>article>div.block-media {
+      background: none;
+    }
+
+    section.section.cat-content.cat-content--block-4>div>article>div.block-text {
+      width: 65%;
+    }
+
+    section.section.cat-content.cat-content--block-4>div>article>div.block-media {
+      width: 35%;
+    }
+
+    section.section.cat-content.cat-content--block-4>div {
+      padding: 15px;
+      background: #fff;
+      margin: 0 15px;
+      width: auto;
+      border-radius: 8px;
+    }
+  }
+
+
+@media (min-width: 992px) {
+section.section.cat-content.cat-content--block-4 > div > article > div.block-media:hover {
+    top: -10px;
+    box-shadow: 3px 6px 15px #00000080;
+}
+section.section.cat-content.cat-content--block-4 > div > article > div.block-media {
+    transition: all ease-in .3s;
+}
+} 
+
+
+
+
+
+
+
+@media (min-width: 1200px) {  
+      section.section.cat-content.cat-content--block-4 {
+      display: flex;
+      justify-content: center;
+    }
+    section.section.cat-content.cat-content--block-4>div {
+      padding: 15px;
+      background: #fff;
+      margin: auto;
+      width: 100%;
+      max-width: 1140px;
+      display: flex;
+      justify-content: center;
+    }
+    section.section.cat-content.cat-content--block-4>div>article>div.block-text {
+      width: auto;
+    }
+
+    section.section.cat-content.cat-content--block-4>div>article>div.block-media {
+      width: auto;
+    }
+} 
 
 
 
@@ -27,13 +126,4 @@
 
 
 
-
-
-
-
-
-
-
-
-    
 }

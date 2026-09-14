@@ -10,6 +10,65 @@
 
 
 
+  section.section.cat-content.cat-content--block-0>div>article>div.block-text>h2 {
+    margin-bottom: 15px !important;
+  }
+
+  section.section.cat-content.cat-content--block-2>div>article>div.block-media {
+    padding: 0;
+  }
+
+  section.section.cat-content.cat-content--block-0>div>article>div.block-media {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  section.section.cat-content.cat-content--block-2>div>article>div.block-text>ul>li:nth-child(3) {
+    margin-bottom: 0 !important;
+  }
+
+  section.section.cat-content.cat-content--block-3.cat-content--alt>div>article>div.block-media {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  section.section.cat-content.cat-content--block-3.cat-content--alt>div>article>div.block-media {
+    margin-top: 0;
+    margin-bottom: 0;
+    background: #fff;
+  }
+
+  section.section.cat-content.cat-content--block-4>div>article>div.block-media {
+    padding: 0;
+  }
+
+
+
+
+  @media (min-width: 1200px) {
+    section.section.cat-content.cat-content--block-2>div>article>div.block-media>img {
+      max-height: 420px;
+    }
+
+    section.section.cat-content.cat-content--block-3.cat-content--alt>div>article>div.block-media>img {
+      max-height: 390px;
+    }
+
+    section.section.cat-content.cat-content--block-3.cat-content--alt>div>article>div.block-media {
+      padding: 0;
+    }
+
+    section.section.cat-content.cat-content--block-3.cat-content--alt>div>article>div.block-media>img {
+      object-fit: cover;
+      max-height: none !important;
+      width: 517px;
+      height: auto;
+    }
+
+    .cat-frees-en-boormallen section.section.cat-content.cat-content--block-3.cat-content--alt div.container article.block.reverse div.block-text {
+      display: flex;
+    }
+  }
 
 
 
@@ -19,17 +78,4 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-    
 }

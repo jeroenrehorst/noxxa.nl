@@ -30,6 +30,7 @@
   [class]="'cat-content--block-' + group[0].index"
   [class.cat-content--alt]="group[0].index % 2 === 1"
   [class.cat-content--columns]="group.length > 1"
+  [class.cat-content--cols-3]="group.length === 3"
 >
   <div class="container">
     @for (item of group; track item.index) {
@@ -59,6 +60,9 @@
         }
         }
         @if (item.block.bullets.length) {
+        @if (item.block.bulletsHeading) {
+        <h3>{{ item.block.bulletsHeading }}</h3>
+        }
         <ul class="block-bullets">
           @for (b of item.block.bullets; track $index) {
           <li>
@@ -92,11 +96,33 @@
           [images]="sliderImages"
           [alt]="item.block.heading || cat.name"
           [interval]="5000"
+          [labels]="sliderLabelsFor(item.index) ?? []"
         />
       </div>
       } @else if (item.block.image; as img) {
       <div class="block-media">
-        <img [src]="img" [alt]="item.block.heading || cat.name" loading="lazy" />
+        @if (item.block.imageHref; as href) {
+        <a [href]="href" target="_blank" rel="noopener">
+          <img
+            [src]="img"
+            [alt]="item.block.heading || cat.name"
+            loading="lazy"
+          />
+        </a>
+        } @else {
+        <img
+          [src]="img"
+          [alt]="item.block.heading || cat.name"
+          loading="lazy"
+          class="block-media__zoom"
+          role="button"
+          tabindex="0"
+          [attr.aria-label]="'Vergroot afbeelding'"
+          (click)="openImage(img, item.block.heading || cat.name)"
+          (keydown.enter)="openImage(img, item.block.heading || cat.name)"
+          (keydown.space)="openImage(img, item.block.heading || cat.name); $event.preventDefault()"
+        />
+        }
       </div>
       }
       @if (item.block.video; as video) {
@@ -153,9 +179,17 @@
   <div class="container cta-inner">
     <div>
       <h2>Interesse in {{ cat.name }}?</h2>
-      <p>Vind uw dichtstbijzijnde verkooppunt en vraag naar het Noxxa assortiment.</p>
+      <p>Bestel direct online in één van onze webshops of vind uw dichtstbijzijnde verkooppunt en vraag naar het Noxxa assortiment.</p>
     </div>
-    <a routerLink="/verkooppunten" class="btn">Naar verkooppunten</a>
+    <div class="cta-actions">
+      <a routerLink="/verkooppunten" class="btn">Naar verkooppunten</a>
+      @if (webshops().isero; as isero) {
+      <a [href]="isero" target="_blank" rel="noopener" class="btn">Bestel online bij Isero</a>
+      }
+      @if (webshops().polvo; as polvo) {
+      <a [href]="polvo" target="_blank" rel="noopener" class="btn">Bestel online bij Polvo</a>
+      }
+    </div>
   </div>
 </section>
 } @else {

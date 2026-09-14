@@ -29,9 +29,13 @@ export interface ContentBlock {
   subheading?: string;
   paragraphs: string[];
   bullets: ContentBullet[];
+  // Optional heading rendered directly above the bullet list.
+  bulletsHeading?: string;
   // Optional paragraphs rendered after the bullet list.
   afterBullets?: string[];
   image: string | null;
+  // Optional file/URL the image links to when clicked (instead of opening the lightbox).
+  imageHref?: string;
   // Paragraphs with an inline bold label.
   strongParagraphs?: StrongParagraph[];
   // Extra headed paragraph groups rendered inside the same section as the block.
@@ -565,7 +569,13 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
           "Het Luxeslide SK 100 schuifdeursysteem kenmerkt zich door een smalle kier van slechts 4 mm tussen de rail en de bovenkant van de deur, dankzij de inbouwophanging. Deze strakke afwerking maakt een kliklijst overbodig, wat bijdraagt aan een modern en minimalistisch design."
         ],
         "bullets": [],
-        "image": "assets/products/SK100-smalle-kier.jpg"
+        "image": "assets/products/SK100-smalle-kier.jpg",
+          "downloads": [
+          {
+            "file": "assets/documentatie-content/ montagehandleidingen/Noxxa-Luxeslide-NKSK100-Mounting-Instruction_LR.pdf",
+            "label": "Montagehandleiding Noxxa Luxeslide NK & SK 100"
+          }
+        ]
       },
       {
         "heading": "Luxeslide Pocket 100 NK & SK: Ideaal voor In-de-Wand Toepassingen",
@@ -574,7 +584,13 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
           "Tip: U kunt de rails uit de wand halen zonder de muur te hoeven slopen, wat ideaal is voor aanpassingen aan het schuifdeurbeslag."
         ],
         "bullets": [],
-        "image": "assets/products/Montagerail.png"
+        "image": "assets/products/Montagerail.png",
+          "downloads": [
+          {
+            "file": "assets/documentatie-content/ montagehandleidingen/Noxxa-Luxeslide-NKSK100-Mounting-Instruction_LR.pdf",
+            "label": "Montagehandleiding Noxxa Luxeslide NK & SK 100"
+          }
+        ]
       },
       {
         "heading": "Furnislide: Eenvoudig Te Installeren Kastdeurbeslag",
@@ -589,7 +605,29 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
           "Maximale hoogte van 2800 mm",
           "In hoogte verstelbaar met 3 mm"
         ],
-        "image": "assets/products/NX100618.5.jpg"
+        "image": null,
+        "video": {
+          "src": "https://www.youtube.com/embed/DZTyXzMzBYg",
+          "title": "Instructievideo Furnislide 2 deurs"
+        },
+          "downloads": [
+          {
+            "file": "assets/documentatie-content/montagehandleidingen/Noxxa-Furnislide-LR.pdf",
+            "label": "Montagehandleiding Noxxa Furnislide"
+          }
+        ]
+      },
+      {
+        "heading": "",
+        "paragraphs": [],
+        "bullets": [],
+        "image": "assets/products/schuifdeurbeslag/NX100618.5.webp"
+      },
+      {
+        "heading": "",
+        "paragraphs": [],
+        "bullets": [],
+        "image": "assets/products/schuifdeurbeslag/NX100618.6.webp"
       }
     ]
   },
@@ -625,7 +663,7 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
           "Spelingsvrij ontwerp voor nauwkeurige montage",
           "Verkrijgbaar in gegalvaniseerd staal en RVS"
         ],
-        "image": "assets/products/scharnieren-image1.png"
+        "image": "assets/products/scharnieren/scharnieren-image1.webp"
       },
       {
         "heading": "Kogelstift Paumelles SKG***",
@@ -645,8 +683,7 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
       {
         "heading": "Onzichtbare Scharnieren",
         "paragraphs": [
-          "Noxxa onzichtbare scharnieren bieden een elegante en functionele oplossing voor moderne interieurs. De onzichtbare scharnieren zorgen ervoor dat deuren naadloos in het ontwerp opgaan. Verkrijgbaar in de kleuren zilver, vernikkeld en mat zwart.",
-          "Tip: Gebruik de Noxxa freesmal (NX101687) voor snelle en nauwkeurige montage."
+          "Noxxa onzichtbare scharnieren bieden een elegante en functionele oplossing voor moderne interieurs. De onzichtbare scharnieren zorgen ervoor dat deuren naadloos in het ontwerp opgaan. Verkrijgbaar in de kleuren zilver, vernikkeld en mat zwart."
         ],
         "bullets": [
           "30 minuten brandwerend",
@@ -656,7 +693,12 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
           "Geschikt voor deuren tot 70 kg",
           "Corrosiebestendig door verzinkte zamak behuizing"
         ],
-        "image": "assets/products/NX100766.png"
+        "image": "assets/products/NX100766.png",
+        "bulletsHeading": "Belangrijkste kenmerken:",
+
+        "afterBullets": [ 
+          "Tip: Gebruik de Noxxa freesmal (NX101687) voor snelle en nauwkeurige montage."
+        ]
       },
       {
         "heading": "Taatsdeurscharnieren",
@@ -670,7 +712,8 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
           "Minimale boorvereiste van 8 mm, waardoor kans op schade aan vloerverwarming wordt geminimaliseerd",
           "Getest volgens DIN EN 1154 op 500.000 cycli voor duurzaamheid"
         ],
-        "image": "assets/products/NX101778.png"
+        "image": "assets/products/NX101778.png",
+         "bulletsHeading": "Belangrijkste kenmerken:"
       },
       {
         "heading": "Kogellagerscharnieren",
@@ -682,7 +725,8 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
           "Verkrijgbaar in diverse maten en materialen",
           "Soepele rotatie en minimale slijtage dankzij kogellagers"
         ],
-        "image": "assets/products/Noxxa-kogellager-scharnierV2.png"
+        "image": "assets/products/Noxxa-kogellager-scharnierV2.png",
+        "bulletsHeading": "Voordelen:"
       },
       {
         "heading": "Vierkante scharnieren",
@@ -694,7 +738,8 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
           "Geschikt voor diverse toepassingen",
           "Verkrijgbaar met of zonder SKG-keurmerk"
         ],
-        "image": "assets/products/vierkant-scharnierV2.png"
+        "image": "assets/products/vierkant-scharnierV2.png",
+        "bulletsHeading": "Kenmerken:"
       },
       {
         "heading": "Glijlagerscharnieren",
@@ -785,7 +830,16 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
           "Hoogwaardige siliconen afdichting en tevens geluids- en brandwerend. De valdorpel sluit pas als de deur dicht is, hierdoor wordt het vuil niet meer meegenomen met de valdorpel en is het de perfecte oplossing bij ruimtes met overdruk. Extreem duurzaam, met een levensduur van minimaal 200.000 cycli."
         ],
         "bullets": [],
-        "image": null
+        "image": "assets/products/valdorpels/premium-geluids-brandwerendv2.webp"
+      },
+            {
+        "heading": "Op zoek naar de juiste valdorpel?",
+        "paragraphs": [
+          "Heb je twijfel over welke valdorpel je nodig hebt? Download hier de valdorpel kieswijzer."
+        ],
+        "bullets": [],
+        "image": "assets/products/valdorpels/image-valdorpels-kieswijzer.webp",
+        "imageHref": "assets/products/valdorpels/Kieswijzer_valdorpels_A5.pdf"
       }
     ]
   },
@@ -839,7 +893,13 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
           "Voor ultieme beveiliging biedt het Noxxa pantserhangslot een ongeevenaarde bescherming. Dit slot, gemaakt van massief messing en omhuld met gehard RVS, beschikt over een hardstalen schoot met uitboorbeveiliging en gedwongen sluiting. Het Noxxa pantserhangslot wordt geleverd met 2 sleutels en biedt maximale gemoedsrust."
         ],
         "bullets": [],
-        "image": "assets/products/NX104256.png"
+        "image": "assets/products/NX104256.png",
+        "downloads": [
+          {
+            "file": "assets/products/hang-discus-sloten/Productblad_Noxxa_hang-discussloten_A4_LR.pdf",
+            "label": "Bekijk hier het productblad voor hang-, discus-, pantsersloten en kettingen."
+          }
+        ]
       }
     ]
   },
@@ -851,6 +911,14 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
         "heading": "Noxxa Sluitlijsten voor Dubbele Deuren - Maximale Veiligheid met Stijl",
         "paragraphs": [
           "De Noxxa sluitlijst is de oplossing voor wie op zoek is naar een combinatie van stijlvol design en maximale inbraakwerendheid (SKG***). Deze sluitlijst blinkt uit in gebruiksvriendelijkheid, waarbij zowel aan de verwerker als de eindgebruiker is gedacht."
+        ],
+        "bullets": [],
+        "image": "" 
+      },
+      {
+        "heading": "",
+        "paragraphs": [
+          ""
         ],
         "bullets": [
           "Verkrijgbaar in vier standaard lengtes, eenvoudig in te korten voor een perfecte pasvorm.",
@@ -929,6 +997,9 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
           "Geschikt voor deurdiktes van 7-97 mm met de meegeleverde bevestigingsset",
           "Een schroefdraad maat (M8) voor alle greepdiameters"
         ],
+          "afterBullets": [
+            "Bestel vandaag nog uw Noxxa deurgrepen en geef uw deuren de hoogwaardige uitstraling die ze verdienen."
+          ],
         "image": "assets/products/NX105523.png"
       }
     ]
@@ -947,12 +1018,21 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
       },
       {
         "heading": "Deurstoppers en Deurvastzetters: Bescherming en Gemak",
+        "subheading": "Deurstoppers",
         "paragraphs": [
           "Deurstoppers en deurvastzetters zijn onmisbare accessoires voor elk huis. Deze kleine, maar cruciale onderdelen beschermen je muren en deuren tegen beschadigingen door te voorkomen dat deuren te ver openen of dichtslaan. Onze deurstoppers zijn robuust en blijven stevig op hun plaats, zelfs bij veelvuldig gebruik. Bovendien zijn ze verkrijgbaar in diverse stijlen en materialen, zodat je altijd een deurstopper vindt die perfect aansluit bij jouw interieur.",
-          "Onze deurvastzetters bieden extra gemak door deuren stevig op hun plaats te houden. Dit is ideaal voor situaties waarin je de deur open wilt houden, zoals bij het in- en uitladen van spullen of voor ventilatie. De deurvastzetters van Noxxa zijn eenvoudig te bedienen en bieden betrouwbare stabiliteit, zodat je je geen zorgen hoeft te maken over onverwacht dichtslaande deuren."
         ],
         "bullets": [],
         "image": "assets/products/NX105323.png"
+      },
+      {
+        "heading": "",
+         "subheading": "Deurvastzetters",
+        "paragraphs": [
+          "Onze deurvastzetters bieden extra gemak door deuren stevig op hun plaats te houden. Dit is ideaal voor situaties waarin je de deur open wilt houden, zoals bij het in- en uitladen van spullen of voor ventilatie. De deurvastzetters van Noxxa zijn eenvoudig te bedienen en bieden betrouwbare stabiliteit, zodat je je geen zorgen hoeft te maken over onverwacht dichtslaande deuren.",
+        ],
+        "bullets": [],
+        "image": "assets/products/deuraccessoires/deuraccessoires-slider2/NX105316.webp"
       },
       {
         "heading": "Noxxa briefplaten: Stijl en Functionaliteit Gecombineerd",
@@ -963,7 +1043,8 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
         "image": null
       },
       {
-        "heading": "RVS Briefplaten",
+        "heading": "",
+        "subheading": "RVS Briefplaten",
         "paragraphs": [
           "Onze RVS briefplaten zijn beschikbaar in ovale en rechthoekige modellen en zijn voorzien van een praktische regenrand die je post beschermt tegen vocht en weersinvloeden. Deze regenrand zorgt ervoor dat je brieven en pakketjes droog en veilig blijven. Bovendien geeft de RVS afwerking je voordeur een tijdloze, luxe uitstraling die jarenlang meegaat."
         ],
@@ -971,7 +1052,8 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
         "image": "assets/products/NX105327.png"
       },
       {
-        "heading": "Aluminium Briefplaten",
+        "heading": "",
+        "subheading": "Aluminium Briefplaten",
         "paragraphs": [
           "Voor wie de voorkeur geeft aan aluminium, biedt Noxxa geveerde aluminium briefplaten die zowel stevig als duurzaam zijn. Deze briefplaten zijn ontworpen om water-, wind- en geluidswerend te zijn, waardoor je huis beter beschermd blijft tegen de elementen en ongewenst geluid van buitenaf. Verkrijgbaar in zowel ronde als rechthoekige uitvoeringen, bieden wij aluminium briefplaten in de klassieke aluminium F1 kleur en een stijlvolle zwart gecoate variant."
         ],
@@ -985,7 +1067,8 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
     "heroImage": "assets/products/NX100000_v2.png",
     "blocks": [
       {
-        "heading": "Boormallen voor Deurbeslag - Binnendeurbeslag",
+        "heading": "Boormallen voor Deurbeslag",
+        "subheading": "Binnendeurbeslag",
         "paragraphs": [
           "De Noxxa binnendeurbeslag collectie biedt drie productlijnen: Basic, Premium en Excellent. Dankzij een uniform gatenpatroon zijn alle binnendeurschilden eenvoudig uitwisselbaar en te upgraden. Met de boormal (art. NX102158) zorg je voor een snelle en foutloze montage, ideaal voor projecten waarbij tijd en kosten belangrijk zijn."
         ],
@@ -993,7 +1076,8 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
         "image": "assets/products/NX102158.png"
       },
       {
-        "heading": "Buitendeurbeslag",
+        "heading": "",
+        "subheading": "Buitendeurbeslag",
         "paragraphs": [
           "Net als bij het binnendeurbeslag, is het buitendeurbeslag beschikbaar in Basic, Premium en Excellent. Alle langschilden hebben hetzelfde gatenpatroon, wat de montage eenvoudig maakt en onderlinge uitwisseling mogelijk maakt. Met de speciale boormal voor veiligheidlangschilden monteer je snel en accuraat, wat bij grotere aantallen aanzienlijke besparingen kan opleveren."
         ],
@@ -1022,7 +1106,7 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
           "Met de Noxxa freesmal behaal je een professioneel resultaat, waarbij de onzichtbare scharnieren perfect worden geintegreerd in zowel de deur als het kozijn."
         ],
         "bullets": [],
-        "image": "assets/products/NX101687.png"
+        "image": "assets/products/boor-freesmallen/NX101687.png"
       },
       {
         "heading": "Freesmal Sluitplaten en Sluitkommen",
@@ -1041,7 +1125,7 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
     "heroImage": "assets/products/0000_Onderdorpel2.png",
     "blocks": [
       {
-        "heading": "Sterk, Isolerend EN Lichtgewicht",
+        "heading": "Lichtgewicht, sterk en breukvast",
         "paragraphs": [
           "De Noxxa Black- en Bluestone onderdorpels zijn samengesteld uit glasvezelversterkt kunststof. Het profiel bestaat voor een groot gedeelte uit glas en heeft een gestructureerd oppervlak door de zware UV-bestendige coating. De neuten worden gefreesd uit polyethyleen.",
           "Belangrijke voordelen zijn het lichte gewicht, de grote sterkte, breukvastheid en minimale uitzettingcoefficient. De onderdorpels hebben als basis een zeer gunstige isolatiewaarde omdat de aanwezige lucht in de holle kamers een perfecte isolator zijn. In de geisoleerde onderdorpel is de UFR waarde zelfs beter dan HR++ glas. Afhankelijk van de gekozen uitvoering en kozijnsamenstelling is een UFR waarde van 0.89 haalbaar."
@@ -1143,14 +1227,27 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
       },
       {
         "heading": "Vergrendelingstypes",
-        "paragraphs": [
-          "Rolnok: De instelbare rolnokken zorgen voor een optimale aanpersdruk boven- en onderaan de deur.",
-          "Penschoot: De geharde stalen penschoten met een sluitlengte van 20mm en een diameter van 11mm passen precies in de sluitplaat en het deurkozijn. Zij zorgen voor een veilig gebruik in stalen DIN-deurkozijnen.",
-          "Sluithaak: Veilige vergrendeling dankzij de sluithaak. Dit meerpuntsslot vergrendelt door een haak die stevig in de sluitplaat grijpt. Dankzij de opwaarts werkende vergrendeling wordt bij het verzakken van de deur voorkomen dat de haak zich vastzet of klemt in de sluitplaat.",
-          "Blokschoot: Met dit systeem krijg je een beveiligd meerpuntsslot, voorzien van massieve schoten."
-        ],
+        "paragraphs": [],
         "bullets": [],
-        "image": "assets/products/rolnok-detail.png"
+        "image": "assets/products/rolnok-detail.png",
+        "strongParagraphs": [
+          {
+            "label": "1. Rolnok:",
+            "text": " De instelbare rolnokken zorgen voor een optimale aanpersdruk boven- en onderaan de deur."
+          },
+          {
+            "label": "2. Penschoot:",
+            "text": " De geharde stalen penschoten met een sluitlengte van 20mm en een diameter van 11mm passen precies in de sluitplaat en het deurkozijn. Zij zorgen voor een veilig gebruik in stalen DIN-deurkozijnen."
+          },
+          {
+            "label": "3. Sluithaak:",
+            "text": " Veilige vergrendeling dankzij de sluithaak. Dit meerpuntsslot vergrendelt door een haak die stevig in de sluitplaat grijpt. Dankzij de opwaarts werkende vergrendeling wordt bij het verzakken van de deur voorkomen dat de haak zich vastzet of klemt in de sluitplaat."
+          },
+          {
+            "label": "4. Blokschoot:",
+            "text": " Met dit systeem krijg je een beveiligd meerpuntsslot, voorzien van massieve schoten."
+          }
+        ]
       }
     ]
   }

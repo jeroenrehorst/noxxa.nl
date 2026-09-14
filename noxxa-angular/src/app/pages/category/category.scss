@@ -285,9 +285,12 @@ section.section.cat-content.cat-content--block-11 {
 }
 
 .cta {
-  background: var(--nx-green);
-  color: #fff;
-  padding: 52px 0;
+    background: var(--nx-green);
+    color: #fff;
+    padding: 52px 0;
+    background: linear-gradient(40deg, #1b1b1b 0%, #002855 80%);
+    border-bottom: 5px solid #e2e6eb;
+    border-top: 5px solid #e2e6eb;
 }
 
 .cta-inner {
@@ -296,6 +299,12 @@ section.section.cat-content.cat-content--block-11 {
   justify-content: space-between;
   gap: 24px;
   flex-wrap: wrap;
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .cta h2 {

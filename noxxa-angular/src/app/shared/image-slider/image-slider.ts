@@ -8,6 +8,7 @@ import {
   input,
   signal,
 } from '@angular/core';
+import { LightboxService } from '../lightbox/lightbox.service';
 
 @Component({
   selector: 'nx-image-slider',
@@ -19,8 +20,10 @@ export class ImageSlider implements OnInit {
   readonly images = input.required<string[]>();
   readonly alt = input<string>('');
   readonly interval = input<number>(5000);
+  readonly labels = input<string[]>([]);
 
   protected readonly current = signal(0);
+  private readonly lightbox = inject(LightboxService);
 
   private timer: ReturnType<typeof setInterval> | undefined;
   private paused = false;
@@ -46,6 +49,14 @@ export class ImageSlider implements OnInit {
     this.restart();
   }
 
+  protected openLightbox(index: number): void {
+    const alt = this.alt();
+    this.lightbox.openGallery(
+      this.images().map((src) => ({ src, alt })),
+      index,
+    );
+  }
+
   protected onMouseEnter(): void {
     this.paused = true;
   }
@@ -66,7 +77,7 @@ export class ImageSlider implements OnInit {
     }
 
     this.timer = setInterval(() => {
-      if (this.paused || this.isHidden()) {
+      if (this.paused || this.isHidden() || this.lightbox.isOpen()) {
         return;
       }
       this.current.update((i) => (i + 1) % this.images().length);

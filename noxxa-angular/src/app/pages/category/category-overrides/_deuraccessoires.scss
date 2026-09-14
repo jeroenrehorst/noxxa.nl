@@ -7,12 +7,26 @@
 
 
 
+section.section.cat-content.cat-content--block-0 > div > article > div {
+    width: 100%;
+}
+section.section.cat-content.cat-content--block-3.cat-content--alt > div > article > div {
+    width: 100%;
+}
+section.section.cat-content.cat-content--block-1.cat-content--alt > div > article > div.block-text > h2 {
+    margin-bottom: 15px !important;
+}
 
 
+@media (min-width: 768px) { 
+    section.section.cat-content.cat-content--block-4 > div > article {
+    flex-direction: row-reverse;
+}
 
-
-
-
+section.section.cat-content.cat-content--block-5.cat-content--alt > div > article {
+    flex-direction: row-reverse;
+}
+}
 
 
 

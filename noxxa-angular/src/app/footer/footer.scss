@@ -73,11 +73,15 @@
   color: #fff;
   max-width: 260px;
 }
+
 .container.footer-bar-inner span {
-    text-align: center;
-    width: 100%;
+  text-align: center;
+  width: 100%;
 }
 
+footer.site-footer {
+  margin-top: 0;
+}
 
 
 
@@ -140,11 +144,11 @@
 
 
 @media (min-width: 1200px) {
-.footer-grid {
+  .footer-grid {
     grid-template-columns: 0.9fr 0.6fr 0.57fr 0.6fr 0.7fr;
     padding: 56px 0 40px;
     gap: 0;
-}
+  }
 
   .footer-logo {
     height: 60px;
@@ -158,5 +162,5 @@
   .footer-grid>div:nth-child(4)>ul {
     margin-top: 32px;
   }
-  
+
 }

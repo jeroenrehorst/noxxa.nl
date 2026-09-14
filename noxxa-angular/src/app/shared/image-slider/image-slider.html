@@ -2,12 +2,35 @@
   <div class="nx-slider-track">
     @for (img of images(); track img; let i = $index) {
     <div class="nx-slide" [class.is-active]="i === current()" [attr.aria-hidden]="i !== current()">
-      <img [src]="img" [alt]="alt()" [attr.loading]="i === 0 ? 'eager' : 'lazy'" />
+      <button
+        type="button"
+        class="nx-slide-trigger"
+        (click)="openLightbox(i)"
+        [attr.tabindex]="i === current() ? 0 : -1"
+        [attr.aria-label]="'Vergroot afbeelding ' + (i + 1)"
+      >
+        <img [src]="img" [alt]="alt()" [attr.loading]="i === 0 ? 'eager' : 'lazy'" />
+      </button>
     </div>
     }
   </div>
 
-  @if (images().length > 1) {
+  @if (labels().length) {
+  <ul class="nx-slider-tabs">
+    @for (label of labels(); track label; let i = $index) {
+    <li [class.is-active]="i === current()">
+      <button
+        type="button"
+        (click)="goTo(i)"
+        [attr.aria-current]="i === current()"
+      >
+        <span class="nx-slider-tab-number">{{ i + 1 }}</span>
+        <span class="nx-slider-tab-label">{{ label }}</span>
+      </button>
+    </li>
+    }
+  </ul>
+  } @else if (images().length > 1) {
   <ul class="slick-dots">
     @for (img of images(); track img; let i = $index) {
     <li [class.slick-active]="i === current()">

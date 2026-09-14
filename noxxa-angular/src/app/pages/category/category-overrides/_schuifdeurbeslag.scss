@@ -10,11 +10,24 @@
 
 section.section.cat-content.cat-content--block-1.cat-content--alt > div > article > div.block-media.block-media--video {
     height: auto;
+    padding: 0;
 }
 
 section.section.cat-content.cat-content--block-3.cat-content--alt > div > article > div.block-media {
     padding: 0;
 }
+section.section.cat-content.cat-content--block-5.cat-content--alt > div > article > div.block-media {
+    padding: 0;
+}
+section.section.cat-content.cat-content--block-6.cat-content--columns {
+    padding-top: 10px;
+    background: #fff;
+}
+section.section.cat-content.cat-content--block-5.cat-content--alt {
+    padding-bottom: 10px;
+}
+
+
 
 
 @media (min-width: 768px) {
@@ -23,7 +36,40 @@ section.section.cat-content.cat-content--block-3.cat-content--alt > div > articl
     max-height: unset;
     border-radius: 8px;
 }
+section.section.cat-content.cat-content--block-5.cat-content--alt > div > article > div.block-media > img {
+    max-height: unset;
 }
+section.section.cat-content.cat-content--block-5.cat-content--alt > div > article > div.block-media > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+section.section.cat-content.cat-content--block-5.cat-content--alt > div > article > div.block-media {
+    padding: 0;
+}
+section.section.cat-content.cat-content--block-5.cat-content--alt > div > article > div.block-media.block-media--video > iframe {
+    padding: 15px;
+}
+section.section.cat-content.cat-content--block-6.cat-content--columns > div > article > div.block-media {
+    width: 100%;
+    padding: 0;
+}
+section.section.cat-content.cat-content--block-6.cat-content--columns > div {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+section.section.cat-content.cat-content--block-6.cat-content--columns > div .block {
+    width: 50%;
+}
+section.section.cat-content.cat-content--block-6.cat-content--columns > div > article > div.block-text {
+    display: none;
+}
+section.section.cat-content.cat-content--block-6.cat-content--columns > div > article > div.block-media > img {
+    max-height: none;
+}
+}   
 
 
 

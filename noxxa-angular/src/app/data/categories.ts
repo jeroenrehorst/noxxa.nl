@@ -94,7 +94,7 @@ export const CATEGORIES: Category[] = [
   },
   {
     slug: 'scharnieren',
-    name: 'Scharnieren',
+    name: 'Scharnieren en paumelles',
     tagline: 'Een passende oplossing voor elke deur',
     intro:
       'Noxxa biedt een compleet assortiment scharnieren en paumelles, beschikbaar in verschillende diktes en maten, zoals ongelagerde scharnieren, kogellagerscharnieren en glijlagerscharnieren. Voor elke deur is er een passende oplossing, of het nu gaat om een lichte binnendeur of een zware buitendeur.',
